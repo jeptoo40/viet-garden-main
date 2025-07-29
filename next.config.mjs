@@ -19,7 +19,6 @@ const nextConfig = {
     ],
     unoptimized: false
   },
-  output: 'standalone',
   trailingSlash: false,
   experimental: {
     optimizeCss: true
