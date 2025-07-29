@@ -19,10 +19,7 @@ const nextConfig = {
     ],
     unoptimized: false
   },
-  trailingSlash: false,
-  experimental: {
-    optimizeCss: true
-  }
+  trailingSlash: false
 }
 
 export default nextConfig
