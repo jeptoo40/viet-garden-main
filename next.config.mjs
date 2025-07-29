@@ -7,11 +7,20 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['placeholder.svg'],
-    unoptimized: true
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'placeholder.svg',
+      },
+      {
+        protocol: 'https',
+        hostname: 'blob.v0.dev',
+      }
+    ],
+    unoptimized: false
   },
   output: 'standalone',
-  trailingSlash: true,
+  trailingSlash: false,
   experimental: {
     optimizeCss: true
   }
