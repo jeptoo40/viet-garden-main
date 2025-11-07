@@ -32,13 +32,14 @@ export default function WelcomeSection() {
               <div className="relative bg-white rounded-3xl p-8 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-purple-50 rounded-3xl opacity-50"></div>
                 <Image
-                  src="/placeholder.svg?height=600&width=400&text=Premium+Wine+Bottle+with+Fresh+Ingredients"
-                  alt="Premium wine bottle with fresh ingredients"
-                  width={400}
-                  height={600}
-                  className="relative z-10 rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-500"
-                  quality={95}
-                />
+  src="/images/cock1-removebg-preview.png"
+  alt="Premium wine bottle with fresh ingredients"
+  width={400}
+  height={600}
+  className="relative z-10 rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-500"
+  quality={95}
+/>
+
 
                 {/* Floating Badge */}
                 <div className="absolute -top-4 -right-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
@@ -65,7 +66,7 @@ export default function WelcomeSection() {
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 leading-none">
                 <span className="block">Welcome to</span>
                 <span className="block bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
-                  Viet Garden
+                  Viet Gardens
                 </span>
                 <span className="block text-4xl md:text-5xl lg:text-6xl text-gray-600">Tala</span>
               </h2>

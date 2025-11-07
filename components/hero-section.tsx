@@ -7,19 +7,20 @@ import { Button } from "@/components/ui/button"
 
 const heroSlides = [
   {
-    image: "/images/hero-fish.jpg",
+    image:  "/images/3.jpg", 
     title: "WELCOME TO VIET GARDENS",
-    subtitle: "Where Vietnamese Heritage Meets Kenyan Soul",
+    subtitle: "Where Heritage Meets Kenyan Soul",
     description: "Experience an extraordinary culinary journey in our enchanting garden oasis",
   },
   {
-    image: "/placeholder.svg?height=800&width=1400&text=Vietnamese+Chef+Cooking",
+    image: "/images/1.jpg",
     title: "AUTHENTIC VIETNAMESE CUISINE",
     subtitle: "Crafted by Master Chefs",
     description: "Traditional recipes passed down through generations, prepared with locally sourced ingredients",
   },
+  
   {
-    image: "/placeholder.svg?height=800&width=1400&text=Elegant+Wedding+Setup",
+    image:   "/images/2.jpeg",
     title: "UNFORGETTABLE CELEBRATIONS",
     subtitle: "Your Dreams, Our Canvas",
     description: "From intimate gatherings to grand celebrations, we create moments that last a lifetime",
@@ -52,6 +53,8 @@ export default function HeroSection() {
     setCurrentSlide(index)
   }
 
+
+  
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Background Images */}

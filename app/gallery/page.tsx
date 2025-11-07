@@ -18,48 +18,73 @@ const galleryCategories = [
 ]
 
 const galleryImages = [
-  { id: 1, src: "/placeholder.svg?height=400&width=600&text=Vietnamese+Pho", alt: "Vietnamese Pho", category: "food" },
+  { id: 1, src: "/images/f2.jpg", alt: "Fries ", category: "food" },
   {
     id: 2,
-    src: "/placeholder.svg?height=400&width=600&text=Restaurant+Interior",
-    alt: "Restaurant Interior",
+    src:"/images/viet7.jpg",
+    alt: "Restaurant View",
     category: "interior",
   },
   {
     id: 3,
-    src: "/placeholder.svg?height=400&width=600&text=Wedding+Setup",
+    src: "/images/viet6.jpg",
     alt: "Wedding Setup",
     category: "weddings",
   },
-  { id: 4, src: "/placeholder.svg?height=400&width=600&text=Grilled+Fish", alt: "Grilled Fish", category: "food" },
+  { id: 4, src: "/images/f1.jpg", alt: "Grilled Fish", category: "food" },
   {
     id: 5,
-    src: "/placeholder.svg?height=400&width=600&text=Birthday+Party",
+    src: "/images/b1.jpeg",
     alt: "Birthday Party",
     category: "events",
   },
-  { id: 6, src: "/placeholder.svg?height=400&width=600&text=Dining+Area", alt: "Dining Area", category: "interior" },
-  { id: 7, src: "/placeholder.svg?height=400&width=600&text=Spring+Rolls", alt: "Spring Rolls", category: "food" },
+  { id: 6, src: "/images/viet3.jpg", alt: "Dining Area", category: "interior" },
+  { id: 7, src: "/images/f3.jpg", alt: "Spring Rolls", category: "food" },
   {
     id: 8,
-    src: "/placeholder.svg?height=400&width=600&text=Conference+Room",
+    src: "/images/viet5.jpg",
     alt: "Conference Room",
     category: "interior",
   },
-  { id: 9, src: "/placeholder.svg?height=400&width=600&text=Team+Building", alt: "Team Building", category: "events" },
+  { id: 9, src:"/images/t1.jpeg", alt: "Team Building", category: "events" },
   {
     id: 10,
-    src: "/placeholder.svg?height=400&width=600&text=Wedding+Ceremony",
+    src: "/images/w1.jpeg",
     alt: "Wedding Ceremony",
     category: "weddings",
   },
   {
     id: 11,
-    src: "/placeholder.svg?height=400&width=600&text=Vietnamese+Coffee",
+    src: "/images/f4.jpg",
     alt: "Vietnamese Coffee",
     category: "food",
   },
-  { id: 12, src: "/placeholder.svg?height=400&width=600&text=Garden+View", alt: "Garden View", category: "interior" },
+  { id: 12, src: "/images/viet4.jpg", alt: "Garden View", category: "all" },
+
+  { id: 15, src: "/images/viet9.jpeg", alt: "Garden View", category: "interior" },
+  {
+    id: 13,
+    src: "/images/viet8.jpg",
+    alt: "Wedding Set",
+    category: "weddings",
+  },
+
+
+
+  {
+    id: 14,
+    src: "/images/viet9.jpg",
+    alt: "scenes",
+    category: "all",
+  },
+
+
+
+
+
+
+
+
 ]
 
 export default function GalleryPage() {

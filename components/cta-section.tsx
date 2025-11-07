@@ -6,16 +6,17 @@ import Image from "next/image"
 
 export default function CTASection() {
   return (
-    <section className="relative py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+    <section className="relative py-32 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <Image
-          src="/placeholder.svg?height=800&width=1400&text=Restaurant+Evening+Ambiance"
+          src="/images/viet1.jpg"
           alt="Restaurant evening ambiance"
           fill
-          className="object-cover opacity-20"
+          className="object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/60"></div>
+       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20"></div>
+
       </div>
 
       {/* Floating Elements */}
@@ -78,8 +79,22 @@ export default function CTASection() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold">Call Us</div>
-                    <div className="text-gray-400 text-sm">+254 700 000</div>
+                  <div>
+  <div className="text-white font-semibold mb-1">Call Us</div>
+  <div className="text-gray-400 text-sm">
+    <a
+      href="https://wa.me/254738658772"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-gray-300 hover:text-green-400 transition"
+    >
+      +254 738 658 772
+    </a>
+    
+    
+  </div>
+</div>
+
                   </div>
                 </div>
 
@@ -113,9 +128,9 @@ export default function CTASection() {
             {/* Visual Side */}
             <div className="relative">
               {/* Main Image */}
-              <div className="relative bg-gradient-to-br from-red-500/20 to-pink-500/20 rounded-3xl p-8 backdrop-blur-sm">
+              <div className="">
                 <Image
-                  src="/placeholder.svg?height=500&width=400&text=Elegant+Dining+Setup"
+                  src="/images/h16.jpeg"
                   alt="Elegant dining setup"
                   width={400}
                   height={500}

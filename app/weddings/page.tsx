@@ -89,24 +89,66 @@ export default function WeddingsPage() {
     <main className="min-h-screen">
       <Header />
       <SimpleHeroSection
-        title="DREAM AFRICAN WEDDINGS"
+        title="DREAM  WEDDINGS"
         subtitle="Where love stories become unforgettable memories with African elegance"
-        backgroundImage="/placeholder.svg?height=800&width=1400&text=African+Wedding+Venue+Garden"
+        backgroundImage= "/images/wedd1.jpg"
       />
-
-      {/* Wedding Intro */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">Your Perfect African Wedding Venue</h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              At Viet Gardens, we celebrate the beauty of African traditions while adding our unique Vietnamese touch.
-              Our beautiful venue, exceptional cuisine, and dedicated team ensure your special day reflects both
-              cultures beautifully.
-            </p>
+{/* Wedding Intro with Carousel */}
+<section className="py-20 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="grid md:grid-cols-2 gap-8 items-center">
+      
+      {/* LEFT: Carousel */}
+      <div className="relative w-full h-96 overflow-hidden rounded-2xl shadow-lg">
+        <div className="carousel relative w-full h-full" id="wedding-carousel">
+          {/* Images */}
+          <div className="absolute inset-0 transition-opacity duration-700 opacity-100">
+            <img
+              src="/images/wedding1.jpeg"
+              alt="African wedding 1"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute inset-0 transition-opacity duration-700 opacity-0">
+            <img
+              src="/images/wedding2.jpg"
+              alt="African wedding 2"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute inset-0 transition-opacity duration-700 opacity-0">
+            <img
+              src="/images/wedding3.jpg"
+              alt="African wedding 3"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
-      </section>
+
+        {/* Indicators */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+          <button className="w-3 h-3 bg-white rounded-full"></button>
+          <button className="w-3 h-3 bg-gray-400 rounded-full"></button>
+          <button className="w-3 h-3 bg-gray-400 rounded-full"></button>
+        </div>
+      </div>
+
+      {/* RIGHT: Text */}
+      <div className="space-y-6 text-center md:text-left">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+          Your Perfect African Wedding Venue
+        </h2>
+        <p className="text-xl text-gray-600 leading-relaxed">
+          At Viet Gardens, we celebrate the beauty of African traditions while adding our unique Vietnamese touch.
+          Our beautiful venue, exceptional cuisine, and dedicated team ensure your special day reflects both
+          cultures beautifully.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Wedding Services */}
       <section className="py-20 bg-gray-50">

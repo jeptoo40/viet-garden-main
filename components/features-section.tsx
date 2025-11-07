@@ -66,7 +66,7 @@ export default function FeaturesSection() {
 
           <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-8">
             Why Choose
-            <span className="block bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-red-600 to-darkblue-600 bg-clip-text text-transparent">
               Viet Gardens?
             </span>
           </h2>
@@ -76,6 +76,7 @@ export default function FeaturesSection() {
             enchanting garden setting
           </p>
         </div>
+
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -116,6 +117,11 @@ export default function FeaturesSection() {
             </Card>
           ))}
         </div>
+
+
+
+
+
 
         {/* Call to Action */}
         <div className="text-center mt-20">

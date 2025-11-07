@@ -103,12 +103,30 @@ export default function Footer() {
                 <p className="text-gray-300">Tala, Machakos County, Kenya</p>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone size={18} className="text-red-500 flex-shrink-0" />
-                <p className="text-gray-300">+254 700 000 000</p>
-              </div>
+  <Phone size={18} className="text-red-500 flex-shrink-0" />
+  <div className="flex flex-col space-y-1">
+    <a
+      href="https://wa.me/254738658772"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-gray-300 hover:text-green-400 transition"
+    >
+      +254 738 658 772
+    </a>
+    <a
+      href="https://wa.me/254702871104"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-gray-300 hover:text-green-400 transition"
+    >
+      +254 702 871 104
+    </a>
+  </div>
+</div>
+
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-red-500 flex-shrink-0" />
-                <p className="text-gray-300">info@vietgardens.co.ke</p>
+                <p className="text-gray-300">Reservations@vietgardens.co.ke</p>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock size={18} className="text-red-500 mt-1 flex-shrink-0" />

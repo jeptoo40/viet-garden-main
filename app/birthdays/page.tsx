@@ -1,269 +1,230 @@
-import Header from "@/components/header"
-import SimpleHeroSection from "@/components/simple-hero-section"
-import WhatsAppChat from "@/components/whatsapp-chat"
-import Footer from "@/components/footer"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Gift, Cake, Music, Camera, BombIcon as Balloon, Star } from "lucide-react"
+"use client";
 
-const birthdayPackages = [
-  {
-    name: "African Kids Birthday",
-    guests: "Up to 20 kids",
-    price: "KSh 25,000",
-    features: [
-      "African-themed decorations",
-      "Traditional African birthday cake",
-      "Kids entertainment with African drums",
-      "Traditional games and storytelling",
-      "African-themed goodie bags",
-      "2-hour venue use",
-    ],
-  },
-  {
-    name: "Adult African Celebration",
-    guests: "Up to 50 guests",
-    price: "KSh 45,000",
-    features: [
-      "Elegant African decorations",
-      "Custom African-inspired birthday cake",
-      "DJ services with African music",
-      "3-course dinner with local dishes",
-      "Photography with African backdrop",
-      "4-hour venue use",
-    ],
-  },
-  {
-    name: "Milestone African Celebration",
-    guests: "Up to 100 guests",
-    price: "KSh 85,000",
-    features: [
-      "Premium African-themed decorations",
-      "Multi-tier African cake design",
-      "Live African entertainment",
-      "Full dinner buffet with fusion menu",
-      "Bar service with local drinks",
-      "Photography & videography",
-      "6-hour venue use",
-    ],
-  },
-]
+import Header from "@/components/header";
+import SimpleHeroSection from "@/components/simple-hero-section";
+import WhatsAppChat from "@/components/whatsapp-chat";
+import Footer from "@/components/footer";
+import Image from "next/image";
+import React from "react";
 
-const africanCakeImages = [
-  {
-    src: "/placeholder.svg?height=250&width=250&text=African+Traditional+Cake",
-    alt: "Traditional African Birthday Cake",
-  },
-  { src: "/placeholder.svg?height=250&width=250&text=African+Safari+Cake", alt: "Safari Themed Birthday Cake" },
-  { src: "/placeholder.svg?height=250&width=250&text=African+Drum+Cake", alt: "African Drum Shaped Cake" },
-  { src: "/placeholder.svg?height=250&width=250&text=African+Sunset+Cake", alt: "African Sunset Theme Cake" },
-  { src: "/placeholder.svg?height=250&width=250&text=African+Animal+Cake", alt: "African Animals Birthday Cake" },
-  { src: "/placeholder.svg?height=250&width=250&text=African+Tribal+Cake", alt: "African Tribal Pattern Cake" },
-]
+type Service = {
+  image: string;
+  title: string;
+  description: string;
+};
 
-const birthdayServices = [
+const birthdayServices: Service[] = [
+
+
+];
+
+// ✅ This is your dedicated Cake Section data
+const cakeGallery: Service[] = [
   {
-    icon: Cake,
-    title: "Custom African Cakes",
-    description: "Beautiful custom cakes with African themes and traditional designs",
+    image: "/images/cake1.jpeg",
+    title: "African Royal Cake",
+    description: "Elegant multi-tier cake inspired by African royalty and tradition.",
   },
   {
-    icon: Balloon,
-    title: "African Decoration",
-    description: "Colorful decorations with African patterns and traditional elements",
+    image: "/images/cake2.png",
+    title: "Tribal Pattern Cake",
+    description: "Beautiful cake with African tribal designs and rich colors.",
   },
   {
-    icon: Music,
-    title: "African Entertainment",
-    description: "Traditional African music, drumming, and dance performances",
+    image: "/images/cake3.jpg",
+    title: "Safari Adventure Cake",
+    description: "Perfect for kids — safari animals and jungle-themed layers.",
   },
   {
-    icon: Camera,
-    title: "Photography",
-    description: "Professional photography with beautiful African-themed backdrops",
+    image: "/images/cake5.jpeg",
+    title: "Cultural Drum Cake",
+    description: "Captures the warmth of African sunsets with smooth gradients.",
   },
   {
-    icon: Gift,
-    title: "Party Planning",
-    description: "Complete African-themed party planning from start to finish",
+    image: "/images/cake6.jpeg",
+    title: "Sunset Delight",
+    description: "A cake shaped like a traditional African drum, full of energy and rhythm.",
+    
   },
   {
-    icon: Star,
-    title: "Cultural Themes",
-    description: "Authentic African themed parties with traditional cultural elements",
+    image: "/images/cake8.jpeg",
+    title: "Ankara-Inspired Cake",
+    description: "Bold, colorful, and full of African fabric artistry.",
   },
-]
+];
 
 export default function BirthdaysPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-gray-50">
       <Header />
+
       <SimpleHeroSection
-        title="AFRICAN BIRTHDAY CELEBRATIONS"
         subtitle="Make every birthday unforgettable with African traditions at Viet Gardens"
-        backgroundImage="/placeholder.svg?height=800&width=1400&text=African+Birthday+Party+Celebration"
+        backgroundImage="/images/birthday.jpg"
       />
+{/* BIRTHDAY SERVICES SECTION */}
+<section className="py-20 bg-gray-50 overflow-hidden">
+  <div className="container mx-auto px-4 lg:flex lg:items-start lg:gap-12">
+    {/* LEFT TEXT */}
+    <div className="lg:w-1/2 mb-8 lg:mb-0">
+      <h2 className="text-4xl font-bold text-gray-800 mb-4">
+      Birthday Party Services
+      </h2>
+      <p className="text-xl text-blue-900 mb-6 leading-relaxed">
+  Experience the beauty and rhythm of birthday celebrations at Viet Gardens Tala —
+  where every event tells a story of culture, joy, and togetherness. From
+  beautifully themed cakes and handcrafted decorations to lively entertainment,
+  delicious traditional cuisines, and professional photography, we create moments
+  that last a lifetime. Whether you’re planning a birthday, wedding, anniversary,
+  or corporate gathering, our spacious gardens, warm hospitality, and vibrant
+  African ambiance make every celebration unforgettable. At Viet Gardens, we don’t
+  just host events — we craft experiences filled with laughter, music, color, and
+  the spirit of Africa.
+</p>
 
-      {/* Introduction */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">Celebrate Life's Special Moments</h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Whether it's a child's first birthday or a milestone celebration, Viet Gardens provides the perfect
-              setting for memorable African-themed birthday parties. Our beautiful venue, delicious fusion food, and
-              traditional African entertainment ensure your special day is truly magical.
-            </p>
-          </div>
+
+
+      <ul className="space-y-4 text-gray-700">
+        {birthdayServices.map((s, i) => (
+          <li key={i} className="flex items-start gap-3">
+            <div className="w-2 h-2 mt-2 bg-orange-500 rounded-full" />
+            <div>
+              <strong className="block text-gray-800">{s.title}</strong>
+              <span className="text-gray-600">{s.description}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* RIGHT SIDE - SINGLE IMAGE */}
+    <div className="lg:w-1/2 relative h-96 rounded-2xl overflow-hidden shadow-lg">
+      <Image
+        src="/images/african-birthday.jpg"
+        alt="African Birthday Celebration"
+        fill
+        className="object-cover"
+        quality={90}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+      <div className="absolute left-4 bottom-4 text-white">
+        <div className="text-lg font-semibold drop-shadow">
+          Authentic Celebration
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* African Birthday Services */}
-      <section className="py-20 bg-gray-50">
+
+      {/* 🍰 CAKE GALLERY SECTION */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">African Birthday Party Services</h2>
-            <p className="text-xl text-gray-600">Everything you need for the perfect African celebration</p>
-          </div>
+          <h2 className="text-4xl font-bold text-gray-800 mb-6 text-center">
+            Our Cake Collection
+          </h2>
+          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+            Explore our stunning range of African-themed cakes for birthdays and special occasions.
+          </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {birthdayServices.map((service, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <service.icon size={32} className="text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* African Cake Gallery */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">African-Themed Birthday Cakes</h2>
-            <p className="text-xl text-gray-600">Beautiful custom cakes inspired by African culture and traditions</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {africanCakeImages.map((cake, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow group">
-                <div className="relative aspect-square">
-                  <Image
-                    src={cake.src || "/placeholder.svg"}
-                    alt={cake.alt}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-end p-4">
-                    <p className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">
-                      {cake.alt}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Birthday Packages */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">African Birthday Packages</h2>
-            <p className="text-xl text-gray-600">Choose the perfect package for your African-themed celebration</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {birthdayPackages.map((pkg, index) => (
-              <Card
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {cakeGallery.map((cake, index) => (
+              <div
                 key={index}
-                className={`relative overflow-hidden ${index === 1 ? "ring-2 ring-orange-500 scale-105" : ""}`}
+                className="bg-gray-50 rounded-xl shadow-md hover:shadow-lg overflow-hidden transition-transform hover:scale-[1.02]"
               >
-                {index === 1 && (
-                  <div className="absolute top-0 left-0 right-0 bg-orange-500 text-white text-center py-2 text-sm font-semibold">
-                    MOST POPULAR
-                  </div>
-                )}
-                <CardContent className="p-8">
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{pkg.name}</h3>
-                    <p className="text-gray-600 mb-4">{pkg.guests}</p>
-                    <div className="text-3xl font-bold text-orange-600">{pkg.price}</div>
-                  </div>
-
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">Book Package</Button>
-                </CardContent>
-              </Card>
+                <Image
+                  src={cake.image}
+                  alt={cake.title}
+                  width={400}
+                  height={250}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    {cake.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">{cake.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
+      {/* African Birthday Cakes Section */}
+<section className="py-20 bg-white">
+  <div className="container mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+    
+    {/* Left side - Text */}
+    <div>
+      <h2 className="text-4xl font-bold text-gray-800 mb-6">
+      Our Inspired Cakes
+      </h2>
+      <p className="text-lg text-gray-600 mb-4">
+        Our cakes are more than desserts — they’re artistic expressions of African heritage.
+        From intricate beadwork designs to patterns inspired by kente and Ankara fabrics,
+        each cake is handmade to match your theme and celebration.
+      </p>
+      <p className="text-lg text-gray-600">
+        Choose from traditional flavors like vanilla, chocolate, or coconut,
+        all beautifully decorated with African motifs and colors that bring your culture to life.
+      </p>
+    </div>
 
-      {/* Age-Specific Celebrations */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">African Celebrations for Every Age</h2>
-            <p className="text-xl text-gray-600">Tailored African experiences for different age groups</p>
-          </div>
+    {/* Right side - Auto scrolling cake images */}
+    <div className="relative overflow-hidden">
+      <div className="flex animate-scroll-x space-x-4">
+        {[
+           "/images/cc1.jpeg",
+           "/images/cc2.jpg",
+           "/images/cc3.jpeg",
+           "/images/cc4.jpg",
+           "/images/cc5.jpg",
+        ].map((src, index) => (
+          <Image
+            key={index}
+            src={src}
+            alt={`African cake ${index + 1}`}
+            width={300}
+            height={200}
+            className="rounded-xl object-cover shadow-md"
+          />
+        ))}
+      </div>
+    </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center bg-gradient-to-br from-yellow-50 to-orange-50">
-              <CardContent className="p-6">
-                <div className="text-4xl mb-4">🥁</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Kids (1-12)</h3>
-                <p className="text-gray-600">
-                  African drumming, storytelling, traditional games, and face painting with tribal patterns
-                </p>
-              </CardContent>
-            </Card>
+  </div>
+</section>
 
-            <Card className="text-center bg-gradient-to-br from-red-50 to-pink-50">
-              <CardContent className="p-6">
-                <div className="text-4xl mb-4">🎭</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Teens (13-19)</h3>
-                <p className="text-gray-600">African music, dance lessons, photo booths with African props</p>
-              </CardContent>
-            </Card>
 
-            <Card className="text-center bg-gradient-to-br from-green-50 to-emerald-50">
-              <CardContent className="p-6">
-                <div className="text-4xl mb-4">🍷</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Adults (20-59)</h3>
-                <p className="text-gray-600">Elegant African dining, traditional cocktails, live African music</p>
-              </CardContent>
-            </Card>
 
-            <Card className="text-center bg-gradient-to-br from-purple-50 to-violet-50">
-              <CardContent className="p-6">
-                <div className="text-4xl mb-4">🎂</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Seniors (60+)</h3>
-                <p className="text-gray-600">Comfortable seating, gentle African music, traditional foods</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
-      <Footer />
+{/* Animation styling */}
+<style jsx>{`
+  @keyframes scroll-x {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-scroll-x {
+    animation: scroll-x 20s linear infinite;
+    width: max-content;
+  }
+`}</style>
+
+
       <WhatsAppChat />
+      <Footer />
+
+      <style global jsx>{`
+        @keyframes scrollX {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </main>
-  )
+  );
 }
