@@ -11,7 +11,7 @@ interface SimpleHeroSectionProps {
 export default function SimpleHeroSection({
   title = "VIET GARDENS",
   subtitle,
-  backgroundImage = "/placeholder.svg?height=800&width=1400&text=Restaurant",
+  backgroundImage = "/images/birthday.jpg",
 }: SimpleHeroSectionProps) {
   return (
     <section className="relative h-[60vh] overflow-hidden">

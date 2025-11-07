@@ -8,7 +8,7 @@ export default function WhatsAppChat() {
   const [message, setMessage] = useState("")
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "+254700000000" // Replace with actual number
+    const phoneNumber = "+254702871104‬ " // Replace with actual number
     const defaultMessage = message || "Hello! I'd like to make a reservation at Viet Gardens."
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`
     window.open(whatsappUrl, "_blank")
@@ -17,7 +17,7 @@ export default function WhatsAppChat() {
   }
 
   const handleCallClick = () => {
-    window.open("tel:+254700000000", "_self")
+    window.open("tel:+254702871104‬ ", "_self")
   }
 
   return (
