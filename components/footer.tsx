@@ -6,34 +6,39 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-white">
-                  <path
-                    d="M12 2C12 2 8 6 8 12C8 16 10 18 12 18C14 18 16 16 16 12C16 6 12 2 12 2Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold">Viet Gardens</h3>
-            </div>
-            <p className="text-gray-300 leading-relaxed">
-              Experience the perfect blend of Vietnamese flavors and Kenyan hospitality in a warm, inviting atmosphere.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={20} />
-              </a>
-            </div>
-          </div>
+         {/* Company Info */}
+<div className="space-y-4">
+  <div className="flex items-center space-x-3">
+    {/* Circular Logo */}
+    <div className="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center">
+      <img
+        src="/images/viet trace.jpg"  // your logo path
+        alt="Viet Gardens Logo"
+        className="w-full h-full object-cover"
+      />
+    </div>
+
+    {/* Company Name */}
+    <h3 className="text-xl font-bold">Viet Gardens</h3>
+  </div>
+
+  <p className="text-gray-300 leading-relaxed">
+    Experience the perfect blend of Vietnamese flavors and Kenyan hospitality in a warm, inviting atmosphere.
+  </p>
+
+  <div className="flex space-x-4">
+    <a href="#" className="text-gray-400 hover:text-white transition-colors">
+      <Facebook size={20} />
+    </a>
+    <a href="#" className="text-gray-400 hover:text-white transition-colors">
+      <Instagram size={20} />
+    </a>
+    <a href="#" className="text-gray-400 hover:text-white transition-colors">
+      <Twitter size={20} />
+    </a>
+  </div>
+</div>
+
 
           {/* Quick Links */}
           <div className="space-y-4">
@@ -124,10 +129,16 @@ export default function Footer() {
   </div>
 </div>
 
-              <div className="flex items-center space-x-3">
-                <Mail size={18} className="text-red-500 flex-shrink-0" />
-                <p className="text-gray-300">Reservations@vietgardens.co.ke</p>
-              </div>
+<div className="flex items-center space-x-3">
+  <Mail size={18} className="text-red-500 flex-shrink-0" />
+  <a
+    href="mailto:Reservations@vietgardens.co.ke"
+    className="text-gray-300 hover:text-red-400 transition"
+  >
+    Reservations@vietgardens.co.ke
+  </a>
+</div>
+
               <div className="flex items-start space-x-3">
                 <Clock size={18} className="text-red-500 mt-1 flex-shrink-0" />
                 <div className="text-gray-300">
@@ -139,7 +150,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-400">© 2024 Viet Gardens. All rights reserved.</p>
+          <p className="text-gray-400">© Viet Gardens. All rights reserved.</p>
         </div>
       </div>
     </footer>

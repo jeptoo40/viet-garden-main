@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Header from "@/components/header"
-import HeroSection from "@/components/hero-section"
+import HeroSection from "@/components/gallery-hero"
 import WhatsAppChat from "@/components/whatsapp-chat"
 import Footer from "@/components/footer"
 import Image from "next/image"

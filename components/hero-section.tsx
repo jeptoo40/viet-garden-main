@@ -56,7 +56,7 @@ export default function HeroSection() {
 
   
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-[700px] overflow-hidden"   >
       {/* Background Images */}
       {heroSlides.map((slide, index) => (
         <div
@@ -109,7 +109,7 @@ export default function HeroSection() {
 
               {/* Main Title */}
               <div className="space-y-4">
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-wider leading-none">
+                <h1 className="text-5xl md:text-5xl lg:text-8xl font-bold text-white tracking-wider leading-none">
                   {heroSlides[currentSlide].title.split(" ").map((word, index) => (
                     <span
                       key={index}
@@ -144,15 +144,10 @@ export default function HeroSection() {
                   </div>
                 </Button>
 
-                <Button
-                  variant="outline"
-                  className="group border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-2xl backdrop-blur-sm bg-transparent"
-                >
-                  <Play className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                  WATCH STORY
-                </Button>
+ 
+
               </div>
-            </div>
+            </div>git add 
           </div>
         </div>
       </div>

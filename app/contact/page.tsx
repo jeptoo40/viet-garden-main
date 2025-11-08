@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import Header from "@/components/header"
-import HeroSection from "@/components/hero-section"
+import HeroSection from "@/components/contact-hero"
 import WhatsAppChat from "@/components/whatsapp-chat"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -51,7 +51,7 @@ export default function ContactPage() {
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Contact Form */}
               <div>
-                <h2 className="text-3xl font-bold text-gray-800 mb-8">Send us a Message</h2>
+                <h2 className="text-3xl font-bold text-blue-900 mb-8">Send us a Message</h2>
                 <Card>
                   <CardContent className="p-8">
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -120,7 +120,8 @@ export default function ContactPage() {
               {/* Contact Information */}
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-800 mb-8">Get in Touch</h2>
+                <h2 className="text-3xl font-bold text-blue-900 mb-8">Get in Touch</h2>
+
                   <p className="text-lg text-gray-600 mb-8">
                     We'd love to hear from you! Whether you have questions about our menu, want to make a reservation,
                     or are planning a special event, our team is here to help.
@@ -148,30 +149,49 @@ export default function ContactPage() {
                   </Card>
 
                   <Card>
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <Phone className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
-                        <div>
-                          <h3 className="font-bold text-gray-800 mb-2">Phone</h3>
-                          <p className="text-gray-600">+254 700 000 000</p>
-                          <p className="text-gray-600">+254 711 000 000</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+  <CardContent className="p-6 space-y-6">
 
-                  <Card>
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <Mail className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
-                        <div>
-                          <h3 className="font-bold text-gray-800 mb-2">Email</h3>
-                          <p className="text-gray-600">info@vietgardens.co.ke</p>
-                          <p className="text-gray-600">reservations@vietgardens.co.ke</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+    {/* Phone */}
+    <div className="flex items-start space-x-4">
+      <Phone className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
+      <div>
+        <h3 className="font-bold text-gray-800 mb-2">Phone</h3>
+
+        {/* Click to Call */}
+        <a href="tel:+254702871104" className="text-gray-600 hover:text-red-500 block">
+          +254 702 871 104
+        </a>
+
+        {/* WhatsApp */}
+        <a
+          href="https://wa.me/254738658772"
+          target="_blank"
+          className="text-gray-600 hover:text-green-600 block"
+        >
+          0738 658 772 (WhatsApp)
+        </a>
+      </div>
+    </div>
+
+    {/* Email */}
+    <div className="flex items-start space-x-4">
+      <Mail className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
+      <div>
+        <h3 className="font-bold text-gray-800 mb-2">Email</h3>
+
+        {/* Click to Email */}
+        <a
+          href="mailto:Reservations@vietgardens.co.ke"
+          className="text-gray-600 hover:text-blue-600"
+        >
+          Reservations@vietgardens.co.ke
+        </a>
+      </div>
+    </div>
+
+  </CardContent>
+</Card>
+
 
                   <Card>
                     <CardContent className="p-6">
@@ -190,61 +210,37 @@ export default function ContactPage() {
                   </Card>
                 </div>
 
-                {/* Social Media */}
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="font-bold text-gray-800 mb-4">Follow Us</h3>
-                    <div className="flex space-x-4">
-                      <a
-                        href="#"
-                        className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors"
-                      >
-                        <Facebook size={20} />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center text-white hover:bg-pink-700 transition-colors"
-                      >
-                        <Instagram size={20} />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-colors"
-                      >
-                        <Twitter size={20} />
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
+               
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">Find Us</h2>
-            <p className="text-xl text-gray-600">Located in the heart of Tala, Machakos County</p>
-          </div>
+    {/* Map Section */}
+<section className="py-20 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12">
+      
+      <p className="text-blue-900 text-lg max-w-2xl mx-auto">
+    
+        Viet Gardens is conveniently located in Tala, Machakos County. Use the map below to get directions directly to our venue.
+      </p>
+    </div>
 
-          <div className="max-w-4xl mx-auto">
-            <Card>
-              <CardContent className="p-0">
-                <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-600">Interactive map would be embedded here</p>
-                    <p className="text-sm text-gray-500 mt-2">Tala, Machakos County, Kenya</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+    <div className="max-w-5xl mx-auto rounded-xl overflow-hidden shadow-lg">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63789.16089684292!2d37.31760280875395!3d-1.317469100000022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18256ed0e7b8e8f7%3A0x9e4002c7eab05d9!2sViet%20Gardens%20Tala!5e0!3m2!1sen!2ske!4v1708602512345!5m2!1sen!2ske"
+        width="100%"
+        height="450"
+        style={{ border: 0 }}
+        allowFullScreen={true}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
 
       <Footer />
       <WhatsAppChat />

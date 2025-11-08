@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image"
 
 import { useState } from "react"
 import Link from "next/link"
@@ -18,28 +19,32 @@ export default function Header() {
     { name: "DINING OPTIONS", href: "/dining" },
     { name: "KIDS CORNER", href: "/kids-corner" },
     { name: "GYM & CONFERENCE", href: "/gym-conference" },
-    { name: "RESERVATIONS", href: "/reservations" },
+
     { name: "GALLERY", href: "/gallery" },
+    { name: "RESERVATIONS", href: "/reservations" },
+  
     { name: "CONTACT US", href: "/contact" },
+
+    
   ]
 
   return (
     <header className="absolute top-0 w-full z-50 bg-black/80 backdrop-blur-sm">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-0">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-              <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-white">
-                  <path
-                    d="M12 2C12 2 8 6 8 12C8 16 10 18 12 18C14 18 16 16 16 12C16 6 12 2 12 2Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-            </div>
-          </Link>
+  <Image
+    src="/images/viet trace.jpg"   // your logo file
+    alt="Viet Gardens Logo"
+    width={80}
+    height={80}
+    priority
+    className="rounded-full object-cover"
+  />
+</Link>
+
+
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
@@ -58,7 +63,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Link href="/reservations">
+            <Link href="/booking">
               <Button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 text-sm font-medium">
                 MAKE A BOOKING
               </Button>
