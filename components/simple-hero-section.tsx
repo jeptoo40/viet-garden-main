@@ -9,7 +9,7 @@ interface SimpleHeroSectionProps {
 }
 
 export default function SimpleHeroSection({
-  title = "VIET GARDENS",
+  title = "",
   subtitle,
   backgroundImage = "/images/birthday.jpg",
 }: SimpleHeroSectionProps) {
@@ -26,7 +26,7 @@ export default function SimpleHeroSection({
           quality={100}
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/10" />
       </div>
 
       {/* Hero Content */}
@@ -36,6 +36,8 @@ export default function SimpleHeroSection({
           {subtitle && <p className="text-xl md:text-2xl opacity-90 font-light">{subtitle}</p>}
         </div>
       </div>
+
+      
     </section>
   )
 }

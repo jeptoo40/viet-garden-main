@@ -8,7 +8,7 @@ export default function MainContent() {
           {/* Left side - Wine bottle image */}
           <div className="relative">
             <Image
-              src="/placeholder.svg?height=600&width=400&text=Wine+Bottle+with+Fresh+Ingredients"
+              src="/image/Premium wine.jpg"
               alt="Premium wine bottle with fresh ingredients"
               width={400}
               height={600}

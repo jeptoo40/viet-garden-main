@@ -81,6 +81,12 @@ export default function BirthdaysPage() {
   just host events — we craft experiences filled with laughter, music, color, and
   the spirit of Africa.
 </p>
+<a
+          href="/reservations"
+          className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition"
+        >
+          Reserve Now 
+        </a>
 
 
 
@@ -123,7 +129,7 @@ export default function BirthdaysPage() {
           <h2 className="text-4xl font-bold text-gray-800 mb-6 text-center">
             Our Cake Collection
           </h2>
-          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+          <p className=" text-blue-900 leading-tight mb-12 text-center">
             Explore our stunning range of African-themed cakes for birthdays and special occasions.
           </p>
 
@@ -157,7 +163,7 @@ export default function BirthdaysPage() {
     
     {/* Left side - Text */}
     <div>
-      <h2 className="text-4xl font-bold text-gray-800 mb-6">
+      <h2 className="text-4xl font-bold  mb-6">
       Our Inspired Cakes
       </h2>
       <p className="text-lg text-gray-600 mb-4">
@@ -170,6 +176,7 @@ export default function BirthdaysPage() {
         all beautifully decorated with African motifs and colors that bring your culture to life.
       </p>
     </div>
+    
 
     {/* Right side - Auto scrolling cake images */}
     <div className="relative overflow-hidden">
@@ -194,6 +201,13 @@ export default function BirthdaysPage() {
     </div>
 
   </div>
+  <a
+          href="/contact"
+          className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition"
+        >
+          Call Us 
+        </a>
+
 </section>
 
 

@@ -1,6 +1,10 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Award, Star, Clock, Users } from "lucide-react"
+import Link from "next/link"
+
+
+
 
 const achievements = [
   { icon: Award, number: "50+", label: "Awards Won" },
@@ -89,20 +93,21 @@ export default function WelcomeSection() {
               </p>
             </div>
 
-            {/* Enhanced CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-8">
-              <Button className="group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-10 py-4 text-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-full">
-                <span className="mr-2">EXPLORE OUR MENU</span>
-                <div className="w-0 group-hover:w-5 transition-all duration-300 overflow-hidden">→</div>
-              </Button>
+           {/* Enhanced CTA Buttons */}
+<div className="flex flex-col sm:flex-row gap-4 pt-8">
+  <Button asChild className="group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-10 py-4 text-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-full">
+    <Link href="/booking">
+      <span className="mr-2">Book Us</span>
+      <div className="w-0 group-hover:w-5 transition-all duration-300 overflow-hidden">→</div>
+    </Link>
+  </Button>
 
-              <Button
-                variant="outline"
-                className="group border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-10 py-4 text-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-xl rounded-full bg-transparent"
-              >
-                MAKE RESERVATION
-              </Button>
-            </div>
+  <Button asChild variant="outline" className="group border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-10 py-4 text-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-xl rounded-full bg-transparent">
+    <Link href="/reservations">
+      MAKE RESERVATION
+    </Link>
+  </Button>
+</div>
 
             {/* Achievement Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-gray-200">

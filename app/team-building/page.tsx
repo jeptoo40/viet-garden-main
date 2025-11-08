@@ -1,79 +1,17 @@
+
+import Link from "next/link"
+
 import Header from "@/components/header"
-import HeroSection from "@/components/hero-section"
+import HeroSection from "@/components/team-building-hero"
 import WhatsAppChat from "@/components/whatsapp-chat"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Users, Target, Trophy, Coffee, Utensils, MapPin } from "lucide-react"
 
-const teamBuildingActivities = [
-  {
-    icon: Target,
-    title: "Outdoor Challenges",
-    description: "Engaging outdoor activities that promote teamwork and problem-solving skills",
-  },
-  {
-    icon: Trophy,
-    title: "Team Competitions",
-    description: "Fun competitive games that build camaraderie and team spirit",
-  },
-  {
-    icon: Coffee,
-    title: "Workshop Sessions",
-    description: "Professional development workshops in a relaxed environment",
-  },
-  {
-    icon: Utensils,
-    title: "Team Dining",
-    description: "Shared meals that foster communication and relationship building",
-  },
-  {
-    icon: MapPin,
-    title: "Nature Walks",
-    description: "Guided nature walks that encourage collaboration and fresh thinking",
-  },
-  {
-    icon: Users,
-    title: "Group Activities",
-    description: "Customized group activities tailored to your team's specific needs",
-  },
-]
 
-const packages = [
-  {
-    name: "Half Day Package",
-    duration: "4 hours",
-    price: "KSh 3,500 per person",
-    features: ["Welcome refreshments", "2 team building activities", "Lunch", "Venue use", "Basic facilitation"],
-  },
-  {
-    name: "Full Day Package",
-    duration: "8 hours",
-    price: "KSh 6,500 per person",
-    features: [
-      "Welcome breakfast",
-      "4 team building activities",
-      "Lunch & dinner",
-      "All-day venue use",
-      "Professional facilitation",
-      "Team photos",
-    ],
-  },
-  {
-    name: "Retreat Package",
-    duration: "2-3 days",
-    price: "KSh 12,000 per person",
-    features: [
-      "Accommodation",
-      "All meals",
-      "Multiple activities",
-      "Workshop sessions",
-      "Evening entertainment",
-      "Professional facilitation",
-      "Certificates",
-    ],
-  },
-]
+
+
 
 export default function TeamBuildingPage() {
   return (
@@ -82,143 +20,86 @@ export default function TeamBuildingPage() {
       <HeroSection
         title="TEAM BUILDING & RETREATS"
         subtitle="Strengthen your team bonds in a beautiful natural setting"
-        backgroundImage="/placeholder.svg?height=800&width=1400&text=Team+Building+Activities"
+        backgroundImage="/images/dining1.jpg"
         showNavigation={false}
       />
 
-      {/* Introduction */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">Build Stronger Teams</h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Our team building programs are designed to enhance communication, boost morale, and create lasting bonds
-              among team members. Set in our beautiful gardens, your team will experience activities that are both fun
-              and meaningful.
-            </p>
-          </div>
-        </div>
-      </section>
+    {/* Introduction */}
+<section className="py-20 bg-white">
+  <div className="container mx-auto px-4">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
 
-      {/* Activities */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">Team Building Activities</h2>
-            <p className="text-xl text-gray-600">Engaging activities designed to bring your team together</p>
-          </div>
+      {/* Left: Image */}
+      <div className="w-full">
+        <img 
+          src="/images/team8.jpg"   // replace with your actual image
+          alt="Team Building"
+          className="rounded-2xl shadow-lg w-full object-cover"
+        />
+      </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamBuildingActivities.map((activity, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <activity.icon size={32} className="text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-4">{activity.title}</h3>
-                  <p className="text-gray-600">{activity.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Right: Text */}
+      <div className="space-y-6">
+        <h2 className="text-4xl md:text-5xl font-bold text-blue-900 leading-tight">
+          Build Stronger Teams
+        </h2>
 
-      {/* Packages */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">Team Building Packages</h2>
-            <p className="text-xl text-gray-600">Choose the perfect package for your team</p>
-          </div>
+        <p className="text-xl text-gray-700 leading-relaxed">
+          Our team building programs are carefully crafted to enhance communication, boost morale, and foster
+          collaboration among team members. Set in our serene and beautifully landscaped gardens, your team
+          will participate in engaging activities that combine fun, challenge, and meaningful learning.
+          From problem-solving exercises to trust-building games, each activity is designed to strengthen
+          relationships, spark creativity, and encourage teamwork in a supportive environment.
+          <br /><br />
+          Whether you are planning a corporate retreat, a bonding session, or a team celebration, our
+          professional facilitators tailor each experience to meet your team’s specific goals. Your team
+          will leave energized, motivated, and more connected than ever  ready to tackle challenges together
+          with renewed confidence and a sense of unity.
+        </p>
+      </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <Card
-                key={index}
-                className={`relative overflow-hidden ${index === 1 ? "ring-2 ring-blue-500 scale-105" : ""}`}
-              >
-                {index === 1 && (
-                  <div className="absolute top-0 left-0 right-0 bg-blue-500 text-white text-center py-2 text-sm font-semibold">
-                    MOST POPULAR
-                  </div>
-                )}
-                <CardContent className="p-8">
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{pkg.name}</h3>
-                    <p className="text-gray-600 mb-4">{pkg.duration}</p>
-                    <div className="text-3xl font-bold text-blue-600">{pkg.price}</div>
-                  </div>
+      <Link href="/contact" passHref>
+    <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold">
+    CONTACT US
+    </Button>
+  </Link>
 
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+    </div>
+  </div>
+</section>
 
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Book Package</Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+
+
+    
+
+     
 
       {/* Why Choose Us */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-gray-800">Why Choose Viet Gardens for Team Building?</h2>
+              <h2 className="text-4xl font-bold text-gray-800">Choose Viet Gardens for Get Together With Kids</h2>
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <span className="text-white text-sm">✓</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-800">Beautiful Natural Setting</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-semibold text-gray-800"></h3>
+                    <p className="text-xl text-blue-900 mb-6 leading-relaxed">
                       Our gardens provide a peaceful, inspiring environment away from office distractions.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Professional Facilitation</h3>
-                    <p className="text-gray-600">
-                      Experienced facilitators guide your team through meaningful activities.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Excellent Catering</h3>
-                    <p className="text-gray-600">Delicious meals and refreshments to keep your team energized.</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-800">Customizable Programs</h3>
-                    <p className="text-gray-600">Activities tailored to your team's specific goals and challenges.</p>
+                      Our gardens provide a peaceful, inspiring environment away from office distractions. 
+                      With professional facilitation, experienced facilitators guide your team through meaningful activities. We offer excellent catering, including delicious meals and refreshments to keep your team energized,
+                       and customizable programs with activities tailored to your team's specific goals and challenges.
+                       </p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="relative">
               <img
-                src="/placeholder.svg?height=500&width=600&text=Team+Building+Photo"
+                src="/images/team building.jpg"
                 alt="Team building activities"
                 className="rounded-lg shadow-lg w-full"
               />

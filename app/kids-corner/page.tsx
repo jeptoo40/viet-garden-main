@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Header from "@/components/header"
-import SimpleHeroSection from "@/components/simple-hero-section"
+import SimpleHeroSection from "@/components/kids-corner-hero"
 import WhatsAppChat from "@/components/whatsapp-chat"
 import Footer from "@/components/footer"
 import Image from "next/image"
@@ -11,100 +11,40 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Heart, Gift, Palette, Music, GamepadIcon, Crown } from "lucide-react"
 
 const kidsActivities = [
-  {
-    icon: Palette,
-    title: "Face Painting Magic",
-    description: "Transform into your favorite animal or superhero!",
-    image: "/placeholder.svg?height=300&width=400&text=Kids+Face+Painting+Fun",
-    color: "from-pink-400 to-purple-500",
-    bgColor: "bg-pink-50",
+  { icon: Palette, title: "Art Corner", description: "Transform into your swimming Hobby Here little hero!", image: "/images/kids2.jpg", color: "from-pink-400 to-purple-500", bgColor: "bg-pink-50" },
+  { icon: Music, title: "Music & Dance", description: "Have fun Activites here this season!", image: "/images/kids3.jpg", color: "from-orange-400 to-red-500", bgColor: "bg-orange-50" },
+  { icon: GamepadIcon, title: "Gaming Zone", description: "come get your fellows here!", image: "/images/kid5.jpg", color: "from-green-400 to-emerald-500", bgColor: "bg-green-50" },
+  { icon: Crown, title: "Royal Corner", description: "Prince and princess corner", image: "/images/kid6.jpg", color: "from-yellow-400 to-orange-500", bgColor: "bg-yellow-50" },
+  { icon: Heart, title: "Nature Fun", description: "Play here at viet gardens little kido learn about nature!", image: "/images/kid7.jpg", color: "from-blue-400 to-cyan-500", bgColor: "bg-blue-50" },
+  { icon: Gift, title: "Surprise Gifts", description: "We have so mush for you come all!", image: "/images/kid8.jpg", color: "from-purple-400 to-pink-500", bgColor: "bg-purple-50" },
+]
+const kidsMenu = [
+  
+ 
+  { 
+    name: "Magic Spring Rolls", 
+    description: "Mini spring rolls with surprise fillings", 
+
+    image: "/images/magic-spring-rolls.jpg", 
+    color: "bg-green-100" 
   },
-  {
-    icon: Music,
-    title: "African Drumming",
-    description: "Learn traditional African rhythms and make music!",
-    image: "/placeholder.svg?height=300&width=400&text=Kids+African+Drumming",
-    color: "from-orange-400 to-red-500",
-    bgColor: "bg-orange-50",
+ 
+  { 
+    name: "Superhero Smoothie", 
+    description: "Power-packed fruit smoothie in fun colors", 
+    
+    image: "/images/superhero-smoothie.jpg", 
+    color: "bg-blue-100" 
   },
-  {
-    icon: GamepadIcon,
-    title: "Garden Treasure Hunt",
-    description: "Explore our magical gardens and find hidden treasures!",
-    image: "/placeholder.svg?height=300&width=400&text=Kids+Garden+Adventure",
-    color: "from-green-400 to-emerald-500",
-    bgColor: "bg-green-50",
-  },
-  {
-    icon: Crown,
-    title: "Princess & Prince Corner",
-    description: "Dress up like royalty with our costume collection!",
-    image: "/placeholder.svg?height=300&width=400&text=Kids+Dress+Up+Corner",
-    color: "from-yellow-400 to-orange-500",
-    bgColor: "bg-yellow-50",
-  },
-  {
-    icon: Heart,
-    title: "Animal Friends Zone",
-    description: "Meet our friendly garden animals and learn about nature!",
-    image: "/placeholder.svg?height=300&width=400&text=Kids+With+Animals",
-    color: "from-blue-400 to-cyan-500",
-    bgColor: "bg-blue-50",
-  },
-  {
-    icon: Gift,
-    title: "Craft Workshop",
-    description: "Create amazing crafts to take home as memories!",
-    image: "/placeholder.svg?height=300&width=400&text=Kids+Craft+Workshop",
-    color: "from-purple-400 to-pink-500",
-    bgColor: "bg-purple-50",
+  { 
+    name: "Birthday Cake Bites", 
+    description: "Mini cupcakes with colorful sprinkles", 
+    
+    image: "/images/Birthday Cake Bites.jpg", 
+    color: "bg-purple-100" 
   },
 ]
 
-const kidsMenu = [
-  {
-    name: "Rainbow Pho",
-    description: "Colorful noodle soup with fun vegetables",
-    price: "KSh 450",
-    emoji: "🌈",
-    color: "bg-red-100",
-  },
-  {
-    name: "Chicken Nugget Safari",
-    description: "Crispy chicken shaped like African animals",
-    price: "KSh 550",
-    emoji: "🦁",
-    color: "bg-yellow-100",
-  },
-  {
-    name: "Magic Spring Rolls",
-    description: "Mini spring rolls with surprise fillings",
-    price: "KSh 400",
-    emoji: "✨",
-    color: "bg-green-100",
-  },
-  {
-    name: "Princess Pancakes",
-    description: "Heart-shaped pancakes with berry sauce",
-    price: "KSh 350",
-    emoji: "👑",
-    color: "bg-pink-100",
-  },
-  {
-    name: "Superhero Smoothie",
-    description: "Power-packed fruit smoothie in fun colors",
-    price: "KSh 250",
-    emoji: "🦸",
-    color: "bg-blue-100",
-  },
-  {
-    name: "Birthday Cake Bites",
-    description: "Mini cupcakes with colorful sprinkles",
-    price: "KSh 200",
-    emoji: "🧁",
-    color: "bg-purple-100",
-  },
-]
 
 const funFacts = [
   { emoji: "🦒", fact: "Giraffes are as tall as a two-story house!" },
@@ -116,14 +56,13 @@ const funFacts = [
 export default function KidsCornerPage() {
   const [currentFact, setCurrentFact] = useState(0)
   const [balloons, setBalloons] = useState<Array<{ id: number; x: number; y: number; color: string }>>([])
+  const [selectedActivity, setSelectedActivity] = useState<typeof kidsActivities[0] | null>(null)
 
   useEffect(() => {
-    // Rotate fun facts
     const factInterval = setInterval(() => {
       setCurrentFact((prev) => (prev + 1) % funFacts.length)
     }, 3000)
 
-    // Generate floating balloons
     const newBalloons = Array.from({ length: 15 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
@@ -156,38 +95,34 @@ export default function KidsCornerPage() {
               animationDelay: `${balloon.id * 0.2}s`,
               animationDuration: `${3 + Math.random() * 2}s`,
             }}
-          >
-            <div className="w-full h-full rounded-full shadow-lg"></div>
-            <div className="absolute top-full left-1/2 w-px h-8 bg-gray-400 transform -translate-x-1/2"></div>
-          </div>
+          />
         ))}
       </div>
 
-      {/* Welcome Section */}
+      {/* Welcome & Fun Fact */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-gradient-to-r from-rainbow-start to-rainbow-end text-white px-8 py-4 rounded-full text-lg font-bold mb-8 animate-pulse">
-              🌟 WELCOME TO THE MOST FUN PLACE EVER! 🌟
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="inline-block bg-gradient-to-r from-rainbow-start to-rainbow-end text-black px-8 py-4 rounded-full text-lg font-bold mb-8 animate-pulse">
+                🌟 WELCOME TO THE MOST FUN PLACE EVER! 🌟
+              </div>
+              <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent mb-4">
+                Let's Have Fun!
+              </h2>
+              <p className="text-2xl text-gray-700 max-w-lg leading-relaxed">
+                🎪 Come and play in our magical garden where dreams come true! We have games, yummy food, and so many fun things to do! 🎪
+              </p>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent mb-8">
-              Let's Have Amazing Fun!
-            </h2>
-            <p className="text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              🎪 Come and play in our magical garden where dreams come true! We have games, yummy food, and so many fun
-              things to do! 🎪
-            </p>
-          </div>
-
-          {/* Fun Fact Carousel */}
-          <div className="max-w-2xl mx-auto mb-16">
-            <Card className="bg-gradient-to-r from-yellow-200 to-orange-200 border-4 border-yellow-400 shadow-2xl">
-              <CardContent className="p-8 text-center">
-                <div className="text-6xl mb-4">{funFacts[currentFact].emoji}</div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">🤔 Did You Know?</h3>
-                <p className="text-xl text-gray-700 font-medium">{funFacts[currentFact].fact}</p>
-              </CardContent>
-            </Card>
+            <div className="max-w-md mx-auto">
+              <Card className="bg-gradient-to-r from-yellow-200 to-orange-200 border-4 border-yellow-400 shadow-2xl">
+                <CardContent className="p-8 text-center">
+                  <div className="text-6xl mb-4">{funFacts[currentFact].emoji}</div>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">🤔 Did You Know?</h3>
+                  <p className="text-xl text-gray-700 font-medium">{funFacts[currentFact].fact}</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -196,210 +131,141 @@ export default function KidsCornerPage() {
       <section className="py-20 bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent mb-8">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-800 to-blue-500 bg-clip-text text-transparent mb-8">
               🎮 Super Fun Activities! 🎮
             </h2>
             <p className="text-xl text-gray-700">Choose your adventure and let the fun begin!</p>
           </div>
-
+          <a
+          href="/booking"
+          className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition"
+        >
+          Book Now 
+        </a>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {kidsActivities.map((activity, index) => (
-              <Card
-                key={index}
-                className={`overflow-hidden hover:scale-105 transition-all duration-300 hover:shadow-2xl border-4 border-dashed ${activity.bgColor} group cursor-pointer`}
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={activity.image || "/placeholder.svg"}
-                    alt={activity.title}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                  <div className="absolute top-4 right-4">
-                    <div
-                      className={`w-16 h-16 bg-gradient-to-br ${activity.color} rounded-full flex items-center justify-center shadow-lg animate-bounce`}
-                    >
-                      <activity.icon className="w-8 h-8 text-white" />
+            {kidsActivities.map((activity, index) => {
+              const Icon = activity.icon
+              return (
+                <Card
+                  key={index}
+                  className={`overflow-hidden hover:scale-105 transition-all duration-300 hover:shadow-2xl border-4 border-dashed ${activity.bgColor} group cursor-pointer`}
+                  onClick={() => setSelectedActivity(activity)}
+                >
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src={activity.image || "/placeholder.svg"}
+                      alt={activity.description}
+                      fill
+                      className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300 cursor-pointer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                    <div className="absolute top-4 right-4">
+                      <div
+                        className={`w-16 h-16 bg-gradient-to-br ${activity.color} rounded-full flex items-center justify-center shadow-lg animate-bounce`}
+                      >
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
                     </div>
                   </div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">
-                    {activity.title}
-                  </h3>
-                  <p className="text-gray-600 text-lg">{activity.description}</p>
-                  <div className="mt-4">
-                    <Button className="w-full bg-gradient-to-r from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 text-white font-bold py-3 rounded-full text-lg">
-                      Let's Play! 🎉
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  <CardContent className="p-6">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-purple-600 transition-colors">
+                      {activity.title}
+                    </h3>
+                    <p className="text-gray-600 text-lg">{activity.description}</p>
+                    <div className="mt-4">
+                      <Button
+                        className="w-full bg-gradient-to-r from-pink-400 to-purple-500 hover:from-pink-500 hover:to-purple-600 text-white font-bold py-3 rounded-full text-lg"
+                        onClick={() => setSelectedActivity(activity)}
+                      >
+                        Let's Play! 🎉
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
         </div>
-      </section>
 
-      {/* Kids Menu Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-100 to-purple-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent mb-8">
-              🍽️ Yummy Food Just for Kids! 🍽️
-            </h2>
-            <p className="text-xl text-gray-700">Delicious and healthy food that kids absolutely love!</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {kidsMenu.map((item, index) => (
-              <Card
-                key={index}
-                className={`${item.color} border-4 border-white shadow-xl hover:scale-105 transition-all duration-300 hover:shadow-2xl`}
+        {/* Modal */}
+        {selectedActivity && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+            <div className="bg-white rounded-2xl max-w-3xl w-full relative overflow-hidden">
+              <button
+                className="absolute top-4 right-4 text-gray-800 text-2xl font-bold"
+                onClick={() => setSelectedActivity(null)}
               >
-                <CardContent className="p-6 text-center">
-                  <div className="text-6xl mb-4">{item.emoji}</div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-3">{item.name}</h3>
-                  <p className="text-gray-700 mb-4 text-lg">{item.description}</p>
-                  <div className="text-3xl font-bold text-green-600 mb-4">{item.price}</div>
-                  <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white font-bold py-2 px-6 rounded-full">
-                    I Want This! 😋
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+                &times;
+              </button>
+              <Image
+                src={selectedActivity.image}
+                alt={selectedActivity.description}
+                width={1200}
+                height={600}
+                className="object-cover w-full h-96"
+              />
+              <div className="p-6">
+                <h3 className="text-3xl font-bold mb-4 text-gray-800">{selectedActivity.title}</h3>
+                <p className="text-gray-700">{selectedActivity.description}</p>
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </section>
+{/* Kids Menu Section */}
+<section className="py-20 bg-gradient-to-br from-pink-100 to-purple-100">
+  <div className="container mx-auto px-4">
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* Left: Text */}
+      <div className="space-y-6">
+        <h2 className="text-5xl font-bold bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+          🍽️ Yummy Food Just for Kids! 🍽️
+        </h2>
+        <p className="text-2xl text-gray-700 leading-relaxed">
+    Welcome to a world of flavors and fun! Our kids’ menu is carefully designed to delight little taste buds while keeping nutrition in mind. From colorful noodle soups to magic spring rolls, each meal is packed with exciting shapes, vibrant colors, and wholesome ingredients. Watch your kids’ eyes light up as they explore dishes inspired by their favorite stories, animals, and superheroes. Perfect for little hands and big imaginations, our meals turn lunchtime into an adventure, making every bite a magical experience!  
+    Bring your little ones to savor healthy, tasty, and fun meals while they enjoy our playful activities, games, and surprises all around them. Every dish is a celebration of joy, creativity, and flavor!
+  </p>
+      </div>
 
-      {/* Interactive Games Section */}
-      <section className="py-20 bg-white/80">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent mb-8">
-              🎯 Interactive Games Zone! 🎯
-            </h2>
-          </div>
+      {/* Right: Food Items */}
+      <div className="space-y-6">
+        {kidsMenu.map((item, index) => (
+          <Card
+            key={index}
+            className="border-4 border-white shadow-xl hover:scale-105 transition-all duration-300 hover:shadow-2xl flex items-center gap-4"
+          >
+            {/* Image */}
+            <div className="w-24 h-24 flex-shrink-0 relative">
+              <Image
+                src={item.image || "/images/kid5.jpg"} // use actual image if available
+                alt={item.name}
+                fill
+                className="object-cover rounded-full"
+              />
+            </div>
+            {/* Text */}
+            <CardContent className="p-4">
+              <h3 className="text-2xl font-bold text-gray-800 mb-1">{item.name}</h3>
+              <p className="text-gray-700 mb-2 text-lg">{item.description}</p>
+              <div className="text-xl font-bold text-green-600">{item.price}</div>
+              <Button className="mt-2 bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white font-bold py-2 px-6 rounded-full">
+                I Want This! 😋
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+<a
+          href="/reservations"
+          className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition"
+        >
+          Reserve Now 
+        </a>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="bg-gradient-to-br from-red-200 to-pink-200 border-4 border-red-300 hover:scale-105 transition-transform">
-              <CardContent className="p-8 text-center">
-                <div className="text-6xl mb-4">🎪</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Circus Show</h3>
-                <p className="text-gray-700">Amazing circus performances every weekend!</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-blue-200 to-cyan-200 border-4 border-blue-300 hover:scale-105 transition-transform">
-              <CardContent className="p-8 text-center">
-                <div className="text-6xl mb-4">🎨</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Art Studio</h3>
-                <p className="text-gray-700">Create beautiful artwork and take it home!</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-green-200 to-emerald-200 border-4 border-green-300 hover:scale-105 transition-transform">
-              <CardContent className="p-8 text-center">
-                <div className="text-6xl mb-4">🏰</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Castle Playground</h3>
-                <p className="text-gray-700">Climb, slide, and explore our magical castle!</p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-yellow-200 to-orange-200 border-4 border-yellow-300 hover:scale-105 transition-transform">
-              <CardContent className="p-8 text-center">
-                <div className="text-6xl mb-4">🎭</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Story Time</h3>
-                <p className="text-gray-700">Listen to amazing African fairy tales!</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Birthday Party Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-100 to-pink-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-8">
-              🎂 Best Birthday Parties Ever! 🎂
-            </h2>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-gradient-to-r from-rainbow-start to-rainbow-end text-white border-8 border-white shadow-2xl">
-              <CardContent className="p-12 text-center">
-                <div className="text-8xl mb-6">🎉</div>
-                <h3 className="text-4xl font-bold mb-6">Make Your Birthday Magical!</h3>
-                <p className="text-2xl mb-8 leading-relaxed">
-                  🎈 Balloons, games, yummy cake, and all your friends! 🎈
-                  <br />🎪 Face painting, treasure hunts, and surprise gifts! 🎪
-                </p>
-                <div className="grid md:grid-cols-3 gap-6 mb-8">
-                  <div className="bg-white/20 rounded-2xl p-6 backdrop-blur-sm">
-                    <div className="text-4xl mb-2">🎨</div>
-                    <h4 className="font-bold text-xl">Art & Crafts</h4>
-                  </div>
-                  <div className="bg-white/20 rounded-2xl p-6 backdrop-blur-sm">
-                    <div className="text-4xl mb-2">🎪</div>
-                    <h4 className="font-bold text-xl">Magic Shows</h4>
-                  </div>
-                  <div className="bg-white/20 rounded-2xl p-6 backdrop-blur-sm">
-                    <div className="text-4xl mb-2">🎁</div>
-                    <h4 className="font-bold text-xl">Surprise Gifts</h4>
-                  </div>
-                </div>
-                <Button className="bg-white text-purple-600 hover:bg-gray-100 font-bold py-4 px-12 rounded-full text-2xl shadow-lg">
-                  Plan My Party! 🎉
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Safety & Parents Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-8">👨‍👩‍👧‍👦 For Parents 👨‍👩‍👧‍👦</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center bg-green-50 border-2 border-green-200">
-              <CardContent className="p-6">
-                <div className="text-4xl mb-4">🛡️</div>
-                <h3 className="font-bold text-gray-800 mb-2">100% Safe</h3>
-                <p className="text-gray-600">All activities are supervised by trained staff</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center bg-blue-50 border-2 border-blue-200">
-              <CardContent className="p-6">
-                <div className="text-4xl mb-4">🥗</div>
-                <h3 className="font-bold text-gray-800 mb-2">Healthy Food</h3>
-                <p className="text-gray-600">Nutritious meals made with fresh ingredients</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center bg-purple-50 border-2 border-purple-200">
-              <CardContent className="p-6">
-                <div className="text-4xl mb-4">👩‍🏫</div>
-                <h3 className="font-bold text-gray-800 mb-2">Expert Staff</h3>
-                <p className="text-gray-600">Trained childcare professionals</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center bg-yellow-50 border-2 border-yellow-200">
-              <CardContent className="p-6">
-                <div className="text-4xl mb-4">📱</div>
-                <h3 className="font-bold text-gray-800 mb-2">Stay Connected</h3>
-                <p className="text-gray-600">Photo updates sent to parents</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      {/* You can add Interactive Games, Birthday, Safety sections here (reuse your previous code) */}
 
       <Footer />
       <WhatsAppChat />

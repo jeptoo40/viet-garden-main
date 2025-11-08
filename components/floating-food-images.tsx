@@ -5,15 +5,15 @@ import Image from "next/image"
 
 const foodImages = [
   {
-    src: "/placeholder.svg?height=200&width=200&text=African+Chicken+Stew",
+    src: "/images/food1.jpg",
     alt: "African Chicken Stew",
-    price: "KSh 1,200",
+   
   },
-  { src: "/placeholder.svg?height=200&width=200&text=Grilled+Goat+Meat", alt: "Grilled Goat Meat", price: "KSh 1,800" },
-  { src: "/placeholder.svg?height=200&width=200&text=Vietnamese+Pho", alt: "Vietnamese Pho", price: "KSh 850" },
-  { src: "/placeholder.svg?height=200&width=200&text=Nyama+Choma", alt: "Nyama Choma", price: "KSh 1,500" },
-  { src: "/placeholder.svg?height=200&width=200&text=Fish+Curry", alt: "Fish Curry", price: "KSh 1,100" },
-  { src: "/placeholder.svg?height=200&width=200&text=Spring+Rolls", alt: "Spring Rolls", price: "KSh 550" },
+  { src: "/images/food2.jpg", alt: "Grilled Goat Meat",},
+  { src: "/images/food3.jpg", alt: "Vietnamese Pho",  },
+  { src: "/images/food4.jpg", alt: "Nyama Choma", },
+  { src:"/images/food5.jpg", alt: "Fish Curry",  },
+  { src: "/images/food6.jpg", alt: "Spring Rolls",  },
 ]
 
 export default function FloatingFoodImages() {
