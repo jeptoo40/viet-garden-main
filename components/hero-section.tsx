@@ -14,7 +14,7 @@ const heroSlides = [
   },
   {
     image: "/images/1.jpg",
-    title: "AUTHENTIC VIETNAMESE CUISINE",
+    title:"CELEBRATE THE VIBRANT ESSENCE OF KENYAN FOOD",
     subtitle: "Crafted by Master Chefs",
     description: "Traditional recipes passed down through generations, prepared with locally sourced ingredients",
   },
