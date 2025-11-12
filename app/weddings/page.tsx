@@ -124,9 +124,7 @@ export default function WeddingsPage() {
               <div className="flex flex-col sm:flex-row gap-6">
                 
 
-                <Button asChild variant="outline" className="border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-12 py-5 text-lg font-semibold rounded-full">
-                  <Link href="/booking">BOOK EVENT</Link>
-                </Button>
+                
               </div>
             </div>
           </div>

@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vietgardens.co.ke"), // ✅ Add this line
   title: "Viet Gardens - Authentic Vietnamese Cuisine in Kenya",
   description:
     "Experience the perfect blend of Vietnamese flavors and Kenyan hospitality at Viet Gardens. Perfect for weddings, events, dining, and special occasions in Tala, Machakos County.",
@@ -15,7 +16,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Viet Gardens" }],
   openGraph: {
     title: "Viet Gardens - Authentic Vietnamese Cuisine in Kenya",
-    description: "Experience the perfect blend of Vietnamese flavors and Kenyan hospitality",
+    description:
+      "Experience the perfect blend of Vietnamese flavors and Kenyan hospitality",
     url: "https://vietgardens.co.ke",
     siteName: "Viet Gardens",
     images: [
@@ -32,10 +34,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Viet Gardens - Authentic Vietnamese Cuisine in Kenya",
-    description: "Experience the perfect blend of Vietnamese flavors and Kenyan hospitality",
+    description:
+      "Experience the perfect blend of Vietnamese flavors and Kenyan hospitality",
     images: ["/images/hero-fish.jpg"],
   },
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -45,7 +48,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>{children}</body>
+      <body
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
+      >
+        {children}
+      </body>
     </html>
   )
 }
