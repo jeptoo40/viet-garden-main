@@ -6,16 +6,28 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
 
+
+
+
+
+
+
+
+
+
+
+
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://vietgardens.co.ke"), // ✅ Add this line
   title: "Viet Gardens - Authentic Vietnamese Cuisine in Kenya",
   description:
-    "Experience the perfect blend of Vietnamese flavors and Kenyan hospitality at Viet Gardens. Perfect for weddings, events, dining, and special occasions in Tala, Machakos County.",
+    "Experience the perfect blend of  flavors and Kenyan hospitality at Viet Gardens. Perfect for weddings, events, dining, and special occasions in Tala, Machakos County.",
   keywords:
     "Vietnamese restaurant, Kenya, Viet Gardens, authentic cuisine, weddings, events, team building, dining, Tala, Machakos",
   authors: [{ name: "Viet Gardens" }],
   openGraph: {
-    title: "Viet Gardens - Authentic Vietnamese Cuisine in Kenya",
+    title: "Viet Gardens - Authentic  Cuisine in Kenya",
     description:
       "Experience the perfect blend of Vietnamese flavors and Kenyan hospitality",
     url: "https://vietgardens.co.ke",
