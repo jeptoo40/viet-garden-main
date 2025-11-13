@@ -1,18 +1,23 @@
-"use client"
+"use client";
 
-import React, { useState } from "react"
-import Link from "next/link"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import WhatsAppChat from "@/components/whatsapp-chat"
-import BookingsHero from "@/components/booking-hero"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin } from "lucide-react"
+import React, { useState } from "react";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import WhatsAppChat from "@/components/whatsapp-chat";
+import BookingsHero from "@/components/booking-hero";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function BookingPage() {
   const [formData, setFormData] = useState({
@@ -24,17 +29,51 @@ export default function BookingPage() {
     guests: "",
     occasion: "",
     specialRequests: "",
-  })
+  });
+
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Reservation submitted:", formData)
-    alert("Thank you! Your reservation request has been submitted. We'll contact you shortly to confirm.")
-  }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const res = await fetch("/admin/bookings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await res.json();
+
+      if (res.ok) {
+        alert("Thank you! Your booking has been submitted.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          date: "",
+          time: "",
+          guests: "",
+          occasion: "",
+          specialRequests: "",
+        });
+      } else {
+        alert("Failed to submit booking: " + result.error);
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    }
+
+    setLoading(false);
+  };
 
   return (
     <main className="min-h-screen">
@@ -51,7 +90,7 @@ export default function BookingPage() {
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-blue-900 mb-6">Book Your Table</h2>
               <p className="text-xl text-gray-600">
-                Fill out the form below and we'll confirm your Booking within 24 hours.
+                Fill out the form below and we'll confirm your booking within 24 hours.
               </p>
             </div>
 
@@ -111,8 +150,27 @@ export default function BookingPage() {
                             <SelectValue placeholder="Select time" />
                           </SelectTrigger>
                           <SelectContent>
-                            {["12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM"].map((time) => (
-                              <SelectItem key={time} value={time}>{time}</SelectItem>
+                            {[
+                               "7:00 AM",
+                               "8:30 AM",
+                               "9:00 AM",
+                               "10:30 AM",
+                               "11:00 AM",
+                               
+                              "12:00 PM",
+                              "12:30 PM",
+                              "1:00 PM",
+                              "1:30 PM",
+                              "2:00 PM",
+                              "6:00 PM",
+                              "6:30 PM",
+                              "7:00 PM",
+                              "7:30 PM",
+                              "8:00 PM",
+                            ].map((time) => (
+                              <SelectItem key={time} value={time}>
+                                {time}
+                              </SelectItem>
                             ))}
                           </SelectContent>
                         </Select>
@@ -127,8 +185,10 @@ export default function BookingPage() {
                             <SelectValue placeholder="Select guests" />
                           </SelectTrigger>
                           <SelectContent>
-                            {[1,2,3,4,5,6,7,8,9,10].map((num) => (
-                              <SelectItem key={num} value={num.toString()}>{num} {num===1?"Guest":"Guests"}</SelectItem>
+                            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                              <SelectItem key={num} value={num.toString()}>
+                                {num} {num === 1 ? "Guest" : "Guests"}
+                              </SelectItem>
                             ))}
                             <SelectItem value="10+">10+ Guests</SelectItem>
                           </SelectContent>
@@ -163,8 +223,12 @@ export default function BookingPage() {
                       />
                     </div>
 
-                    <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg">
-                      Submit Booking
+                    <Button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg"
+                    >
+                      {loading ? "Submitting..." : "Submit Booking"}
                     </Button>
                   </form>
                 </CardContent>
@@ -181,8 +245,23 @@ export default function BookingPage() {
                         <div>
                           <p className="font-medium text-gray-800">Phone / WhatsApp</p>
                           <p className="text-gray-600">
-                            <a href="https://wa.me/254702871104" target="_blank" rel="noopener noreferrer" className="hover:underline">+254702871104</a>{" / "}
-                            <a href="https://wa.me/0738658772" target="_blank" rel="noopener noreferrer" className="hover:underline">0738658772</a>
+                            <a
+                              href="https://wa.me/254702871104"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:underline"
+                            >
+                              +254702871104
+                            </a>{" "}
+                            /{" "}
+                            <a
+                              href="https://wa.me/0738658772"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:underline"
+                            >
+                              0738658772
+                            </a>
                           </p>
                         </div>
                       </div>
@@ -192,7 +271,9 @@ export default function BookingPage() {
                         <div>
                           <p className="font-medium text-gray-800">Email</p>
                           <p className="text-gray-600">
-                            <a href="mailto:Reservations@vietgardens.co.ke" className="hover:underline">Reservations@vietgardens.co.ke</a>
+                            <a href="mailto:Reservations@vietgardens.co.ke" className="hover:underline">
+                              Reservations@vietgardens.co.ke
+                            </a>
                           </p>
                         </div>
                       </div>
@@ -207,23 +288,6 @@ export default function BookingPage() {
                     </div>
                   </CardContent>
                 </Card>
-
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-bold text-blue-900">How We Ensure Your Booking is Successful</h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    Once you submit your Booking request, our team promptly reviews your details and confirms availability via email or WhatsApp. 
-                    We make sure to accommodate your preferred date, time, and any special requests you provide.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    You will receive a confirmation message with all Booking details, including the number of guests and seating arrangements. 
-                    Our goal is to make your booking seamless, stress-free, and tailored to your needs.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    On the day of your Booking, our staff ensures everything is prepared, from table setup to any special arrangements. 
-                    Whether it’s a casual meal, business meeting, or celebration, we guarantee an exceptional experience.
-                  </p>
-                 
-                </div>
               </div>
             </div>
           </div>
@@ -233,5 +297,5 @@ export default function BookingPage() {
       <Footer />
       <WhatsAppChat />
     </main>
-  )
+  );
 }
