@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { pool } from '../db';
 import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
 
 export async function POST(req: Request) {
   try {
@@ -10,7 +11,6 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: 'Username and password are required' }, { status: 400 });
     }
 
-    // Query by username
     const [rows]: any = await pool.query('SELECT * FROM admins WHERE username = ?', [username]);
 
     if (rows.length === 0) {
@@ -19,8 +19,8 @@ export async function POST(req: Request) {
 
     const admin = rows[0];
 
-    // Plain password comparison for now
-    if (admin.password !== password) {
+    const validPassword = await bcrypt.compare(password, admin.password);
+    if (!validPassword) {
       return NextResponse.json({ message: 'Invalid username or password' }, { status: 401 });
     }
 
