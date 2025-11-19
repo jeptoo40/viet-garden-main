@@ -21,9 +21,9 @@ const heroSlides = [
   
   {
     image:   "/images/2.jpeg",
-    title: "UNFORGETTABLE CELEBRATIONS",
-    subtitle: "Your Dreams, Our Canvas",
-    description: "From intimate gatherings to grand celebrations, we create moments that last a lifetime",
+    title: " ",
+    subtitle: " ",
+    description: " ",
   },
 ]
 
@@ -147,7 +147,7 @@ export default function HeroSection() {
  
 
               </div>
-            </div>git add 
+            </div>
           </div>
         </div>
       </div>

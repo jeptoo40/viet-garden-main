@@ -106,7 +106,7 @@ export default function BirthdaysPage() {
     {/* RIGHT SIDE - SINGLE IMAGE */}
     <div className="lg:w-1/2 relative h-96 rounded-2xl overflow-hidden shadow-lg">
       <Image
-        src="/images/african-birthday.jpg"
+        src="/images/b1.jpg"
         alt="African Birthday Celebration"
         fill
         className="object-cover"

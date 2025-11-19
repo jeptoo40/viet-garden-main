@@ -39,7 +39,7 @@ export default function WeddingsPage() {
           Your Perfect African Wedding Venue
         </h2>
         <p className="text-xl text-gray-600 leading-relaxed">
-          At Viet Gardens, we celebrate the beauty of African traditions while adding our unique Vietnamese touch.
+          At Viet Gardens, we celebrate the beauty of African traditions.
           Our beautiful venue, exceptional cuisine, and dedicated team ensure your special day reflects both
           cultures beautifully.
         </p>
