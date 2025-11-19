@@ -67,7 +67,7 @@ export default function FloatingFoodImages() {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
           <h3 className="text-2xl font-bold text-gray-800 mb-2">Delicious Cuisine</h3>
-          <p className="text-gray-600">Vietnamese & African Fusion</p>
+          <p className="text-gray-600">With African Fusion</p>
         </div>
       </div>
     </div>

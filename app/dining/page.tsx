@@ -56,7 +56,7 @@ export default function DiningPage() {
               Our Culinary Excellence
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our menu celebrates the rich culinary traditions of Vietnam while incorporating the vibrant flavors of Kenya
+              Our menu celebrates the rich culinary traditions  while incorporating the vibrant flavors of Kenya
             </p>
 
             <a
@@ -87,7 +87,7 @@ export default function DiningPage() {
                 Explore Our Culinary Delights
               </h2>
               <p className="text-xl text-gray-700 leading-relaxed">
-                Our menu celebrates the rich culinary traditions of Vietnam while incorporating the vibrant flavors of Kenya.
+                Our menu celebrates the rich culinary traditions  while incorporating the vibrant flavors of Kenya.
                 Each dish is thoughtfully prepared by our master chefs using the freshest ingredients.
                 <br /><br />
                 From delectable appetizers to mouthwatering desserts, we ensure every bite tells a story of authenticity, passion,
