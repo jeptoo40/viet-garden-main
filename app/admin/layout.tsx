@@ -59,11 +59,8 @@ export default function AdminLayout({ children, adminName }: AdminLayoutProps) {
           <Link href="/admin/reservations" className="flex items-center p-3 rounded-lg hover:bg-gray-700 transition-colors">
             <FaCalendar className="mr-4 text-lg" /> Reservations
           </Link>
-          <Link href="/admin/customers" className="flex items-center p-3 rounded-lg hover:bg-gray-700 transition-colors">
-            <FaUsers className="mr-4 text-lg" /> Customers
-          </Link>
           <Link href="/admin/contacts" className="flex items-center p-3 rounded-lg hover:bg-gray-700 transition-colors">
-            <FaEnvelope className="mr-4 text-lg" /> Contact Messages
+            <FaEnvelope className="mr-4 text-lg" /> Messages
           </Link>
           <Link href="/admin/settings" className="flex items-center p-3 rounded-lg hover:bg-gray-700 transition-colors">
             <FaCog className="mr-4 text-lg" /> Settings
