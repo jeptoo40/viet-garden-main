@@ -42,7 +42,7 @@ export default function BookingPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("/admin/bookings", {
+      const res = await fetch("/api/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
