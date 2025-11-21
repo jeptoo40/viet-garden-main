@@ -137,13 +137,7 @@ export default function HeroSection() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 pt-8">
-                <Button className="group bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-2xl hover:scale-105 border-2 border-red-600">
-                  <span className="mr-2">EXPLORE MENU</span>
-                  <div className="w-0 group-hover:w-4 transition-all duration-300 overflow-hidden">
-                    <ChevronRight className="w-4 h-4" />
-                  </div>
-                </Button>
-
+              
  
 
               </div>
