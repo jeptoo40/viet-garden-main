@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
+
   images: {
+    qualities: [75, 95, 100],   // add all qualities used in your images
     remotePatterns: [
       {
         protocol: 'https',
@@ -19,7 +18,8 @@ const nextConfig = {
     ],
     unoptimized: false
   },
-  trailingSlash: false
-}
 
-export default nextConfig
+  trailingSlash: false
+};
+
+export default nextConfig;
