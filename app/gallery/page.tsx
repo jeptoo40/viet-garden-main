@@ -61,7 +61,7 @@ const galleryImages = [
   },
   { id: 12, src: "/images/viet4.jpg", alt: "Garden View", category: "all" },
 
-  { id: 15, src: "/images/viet9.jpeg", alt: "Garden View", category: "interior" },
+  
   {
     id: 13,
     src: "/images/viet8.jpg",
