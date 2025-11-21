@@ -20,11 +20,11 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://vietgardens.co.ke"), // ✅ Add this line
-  title: "Viet Gardens - Authentic Vietnamese Cuisine in Kenya",
+  title: "Viet Gardens - Authentic African Cuisine in Kenya",
   description:
     "Experience the perfect blend of  flavors and Kenyan hospitality at Viet Gardens. Perfect for weddings, events, dining, and special occasions in Tala, Machakos County.",
   keywords:
-    "Vietnamese restaurant, Kenya, Viet Gardens, authentic cuisine, weddings, events, team building, dining, Tala, Machakos",
+    "African restaurant, Kenya, Viet Gardens, authentic cuisine, weddings, events, team building, dining, Tala, Machakos",
   authors: [{ name: "Viet Gardens" }],
   openGraph: {
     title: "Viet Gardens - Authentic  Cuisine in Kenya",
@@ -45,12 +45,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Viet Gardens - Authentic Vietnamese Cuisine in Kenya",
+    title: "Viet Gardens - Authentic African Cuisine in Kenya",
     description:
-      "Experience the perfect blend of Vietnamese flavors and Kenyan hospitality",
+      "Experience the perfect blend of African flavors and Kenyan hospitality",
     images: ["/images/hero-fish.jpg"],
   },
-  generator: "v0.dev",
+  generator: "salpanSoftwares.dev",
 }
 
 export default function RootLayout({
