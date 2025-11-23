@@ -6,24 +6,24 @@ import jwt from "jsonwebtoken";
 // POST /api/auth
 export async function POST(req: Request) {
   try {
-    const { email, password } = await req.json();
+    const { username, password } = await req.json();
 
-    if (!email || !password) {
+    if (!username || !password) {
       return NextResponse.json(
-        { message: "Email and password are required" },
+        { message: "Username and password are required" },
         { status: 400 }
       );
     }
 
-    // Check if admin exists
+    // Check if admin exists by username
     const [rows]: any = await pool.query(
-      "SELECT * FROM admins WHERE email = ?",
-      [email]
+      "SELECT * FROM admins WHERE username = ?",
+      [username]
     );
 
     if (rows.length === 0) {
       return NextResponse.json(
-        { message: "Invalid email or password" },
+        { message: "Invalid username or password" },
         { status: 401 }
       );
     }
@@ -34,14 +34,14 @@ export async function POST(req: Request) {
     const validPassword = await bcrypt.compare(password, admin.password);
     if (!validPassword) {
       return NextResponse.json(
-        { message: "Invalid email or password" },
+        { message: "Invalid username or password" },
         { status: 401 }
       );
     }
 
     // Sign JWT
     const token = jwt.sign(
-      { id: admin.id, email: admin.email, role: admin.role },
+      { id: admin.id, username: admin.username, email: admin.email, role: admin.role },
       process.env.JWT_SECRET as string,
       { expiresIn: "1h" }
     );
@@ -53,6 +53,7 @@ export async function POST(req: Request) {
       admin: {
         id: admin.id,
         name: admin.name,
+        username: admin.username,
         email: admin.email,
         role: admin.role,
       },
