@@ -6,7 +6,7 @@ import { Loader2 } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -20,7 +20,7 @@ export default function LoginPage() {
       const res = await fetch("/api/auth", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
       });
 
       const data = await res.json();
@@ -34,7 +34,7 @@ export default function LoginPage() {
       // Save token
       localStorage.setItem("token", data.token);
 
-     // Redirect to dashboard
+      // Redirect to dashboard
       router.push("/admin/dashboard");
 
 
@@ -58,13 +58,13 @@ export default function LoginPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block mb-1 text-sm font-medium">Email</label>
+            <label className="block mb-1 text-sm font-medium">Username</label>
             <input
-              type="email"
+              type="text"
               className="w-full border p-2 rounded"
               required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
 
