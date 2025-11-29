@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 // GET ALL ADMINS
 export async function GET() {
   try {
-    const [rows] = await pool.execute("SELECT id, name, email, role, created_at FROM admins ORDER BY created_at DESC");
+    const [rows] = await pool.execute("SELECT id, username, email, role, created_at FROM admins ORDER BY created_at DESC");
     return NextResponse.json(rows);
   } catch (error) {
     console.error("Error fetching admins:", error);
@@ -17,13 +17,13 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, password, role } = body;
+    const { username, email, password, role } = body;
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await pool.execute(
-      "INSERT INTO admins (name, email, password, role) VALUES (?, ?, ?, ?)",
-      [name, email, hashedPassword, role || "admin"]
+      "INSERT INTO admins (username, email, password, role) VALUES (?, ?, ?, ?)",
+      [username, email, hashedPassword, role || "admin"]
     );
 
     return NextResponse.json({ message: "Admin created" });
