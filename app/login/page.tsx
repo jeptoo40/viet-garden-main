@@ -24,23 +24,30 @@ export default function LoginPage() {
       });
 
       const data = await res.json();
+      console.log("🔐 Login response:", { status: res.status, data });
 
       if (!res.ok) {
+        console.log("❌ Login failed:", data.message);
         setError(data.message || "Login failed");
         setLoading(false);
         return;
       }
 
       // Save token
+      console.log("💾 Saving token to localStorage");
       localStorage.setItem("token", data.token);
+      console.log("✅ Token saved successfully");
+      console.log("📦 Token contents:", { token: data.token?.substring(0, 20) + "..." });
 
-      // Redirect to dashboard
-      router.push("/admin/dashboard");
+      // Redirect to dashboard using window.location for reliable navigation
+      console.log("🔄 Redirecting to /admin/dashboard");
 
+      // Use window.location.href for a hard redirect
+      window.location.href = "/admin/dashboard";
 
     } catch (err) {
+      console.error("❌ Unexpected error:", err);
       setError("Server error");
-    } finally {
       setLoading(false);
     }
   };
