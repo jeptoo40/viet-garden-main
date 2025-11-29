@@ -18,7 +18,8 @@ if (!globalThis.mysqlPool) {
     host: process.env.DB_HOST || "old19i.h.filess.io",
     port: parseInt(process.env.DB_PORT || "3307"),
     user: process.env.DB_USER || "viet_garden_meetsaypay",
-    password: process.env.DB_PASS || "3825cfa21841b58fcd27fd6ffda4db6660473676",
+password: process.env.DB_PASSWORD || "3825cfa21841b58fcd27fd6ffda4db6660473676",
+
     database: process.env.DB_NAME || "viet_garden_meetsaypay",
     waitForConnections: true,
     connectionLimit: 3, // Files.io allows max 5
@@ -30,3 +31,5 @@ pool = globalThis.mysqlPool!;
 
 export { pool };
    
+
+
