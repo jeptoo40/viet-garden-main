@@ -15,7 +15,7 @@ export default function CTASection() {
           fill
           className="object-cover opacity-50"
         />
-       <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20"></div>
 
       </div>
 
@@ -79,21 +79,21 @@ export default function CTASection() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                  <div>
-  <div className="text-white font-semibold mb-1">Call Us</div>
-  <div className="text-gray-400 text-sm">
-    <a
-      href="https://wa.me/254738658772"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-gray-300 hover:text-green-400 transition"
-    >
-      +254 738 658 772
-    </a>
-    
-    
-  </div>
-</div>
+                    <div>
+                      <div className="text-white font-semibold mb-1">Call Us</div>
+                      <div className="text-gray-400 text-sm">
+                        <a
+                          href="https://wa.me/254738658772"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-300 hover:text-green-400 transition"
+                        >
+                          +254 738 658 772
+                        </a>
+
+
+                      </div>
+                    </div>
 
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export default function CTASection() {
               {/* Main Image */}
               <div className="">
                 <Image
-                  src="/images/h16.jpeg"
+                  src="/images/viet-garden-hero.jpg"
                   alt="Elegant dining setup"
                   width={400}
                   height={500}

@@ -27,10 +27,23 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     const loadData = async () => {
-      // Fetch Bookings
+      // Fetch Dashboard Stats (Counts & Revenue)
+      try {
+        const statsRes = await fetch("/api/dashboard/stats");
+        if (statsRes.ok) {
+          const stats = await statsRes.json();
+          setBookingsCount(stats.bookings);
+          setMenuItems(stats.menuItems);
+          setTeamMembers(stats.teamMembers);
+          setRevenue(stats.revenue);
+        }
+      } catch (error) {
+        console.error("Failed to fetch dashboard stats", error);
+      }
+
+      // Fetch Bookings for Chart
       const bookingsRes = await fetch("/api/bookings");
       const bookings: Booking[] = await bookingsRes.json();
-      setBookingsCount(bookings.length);
 
       // Format Monthly Chart
       const grouped: any = {};
@@ -57,14 +70,14 @@ export default function AdminDashboard() {
 
   return (
     <div className="p-10 grid grid-cols-1 lg:grid-cols-4 gap-8">
-      
+
       {/* LEFT MAIN SECTION */}
       <div className="lg:col-span-3 space-y-8">
         <h1 className="text-3xl font-bold"></h1>
 
         {/* Metric Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          
+
           <Card className="bg-blue-100">
             <CardContent className="text-center p-5">
               <h2 className="text-3xl font-bold">{bookingsCount}</h2>
@@ -110,7 +123,7 @@ export default function AdminDashboard() {
         </Card>
       </div>
 
-     
+
 
     </div>
   );
