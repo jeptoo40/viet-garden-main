@@ -14,9 +14,9 @@ const heroSlides = [
   },
   {
     image: "/images/1.jpg",
-    title:" Best Moments",
+    title:" ",
     subtitle: "Crafted by Master Chefs",
-    description: "Traditional recipes passed down through generations, prepared with locally sourced ingredients",
+    description: " ",
   },
   
   {

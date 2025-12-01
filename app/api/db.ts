@@ -15,7 +15,7 @@ const dbConfig = {
   host: process.env.DB_HOST || "old19i.h.filess.io",
   port: parseInt(process.env.DB_PORT || "3307"),
   user: process.env.DB_USER || "viet_garden_meetsaypay",
-  password: process.env.DB_PASS || "3825cfa21841b58fcd27fd6ffda4db6660473676",
+  password: process.env.DB_PASSWORD || "3825cfa21841b58fcd27fd6ffda4db6660473676", // fixed
   database: process.env.DB_NAME || "viet_garden_meetsaypay",
   waitForConnections: true,
   connectionLimit: 3,
@@ -89,13 +89,12 @@ export async function queryWithRetry(sql: string, params?: any[], maxRetries = 2
       if (["ECONNRESET", "ETIMEDOUT", "PROTOCOL_CONNECTION_LOST"].includes(error.code)) {
         if (attempt < maxRetries) {
           console.log(`🔄 Retrying query... (${attempt}/${maxRetries})`);
-          // Wait a bit before retrying
           await new Promise((resolve) => setTimeout(resolve, 1000));
           continue;
         }
       }
 
-      // Don't retry other errors
+      // Throw other errors immediately
       throw error;
     }
   }
