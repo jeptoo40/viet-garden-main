@@ -15,7 +15,7 @@ const heroSlides = [
   {
     image: "/images/1.jpg",
     title:" ",
-    subtitle: "Crafted by Master Chefs",
+    subtitle: "  ",
     description: " ",
   },
   
