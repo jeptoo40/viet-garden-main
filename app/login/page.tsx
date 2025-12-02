@@ -33,10 +33,11 @@ export default function LoginPage() {
         return;
       }
 
-      // Save token
-      console.log("💾 Saving token to localStorage");
+      // Save token and username
+      console.log("💾 Saving token and username to localStorage");
       localStorage.setItem("token", data.token);
-      console.log("✅ Token saved successfully");
+      localStorage.setItem("username", data.admin.username);
+      console.log("✅ Credentials saved successfully");
       console.log("📦 Token contents:", { token: data.token?.substring(0, 20) + "..." });
 
       // Redirect to dashboard using window.location for reliable navigation

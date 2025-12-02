@@ -125,6 +125,30 @@ export default function AdminDashboard() {
 
 
 
-    </div>
+
+      {/* RIGHT SIDEBAR - RECENT MESSAGES */}
+      <div className="space-y-6">
+        <Card className="p-6 shadow-md h-full">
+          <h2 className="text-xl font-bold mb-4">Recent Messages</h2>
+          <div className="space-y-4">
+            {messages.length === 0 ? (
+              <p className="text-gray-500 text-sm">No new messages</p>
+            ) : (
+              messages.slice(0, 5).map((msg) => (
+                <div key={msg.id} className="border-b pb-3 last:border-0">
+                  <p className="font-semibold text-sm">{msg.name}</p>
+                  <p className="text-xs text-gray-500 truncate">{msg.email}</p>
+                  <p className="text-gray-700 text-sm mt-1 line-clamp-2">{msg.message}</p>
+                  <p className="text-xs text-gray-400 mt-1">
+                    {new Date(msg.created_at).toLocaleDateString()}
+                  </p>
+                </div>
+              ))
+            )}
+          </div>
+        </Card>
+      </div>
+
+    </div >
   );
 }
