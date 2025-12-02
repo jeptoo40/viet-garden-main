@@ -16,7 +16,7 @@ async function resetAdmin() {
 
     try {
         const username = 'jackson';
-        const password = 'jackson123';
+        const password = '@Manager123';
         const email = 'jackson@example.com'; // Placeholder email
 
         console.log(`🔐 Hashing password for user: ${username}`);
