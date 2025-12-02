@@ -95,6 +95,7 @@ export async function queryWithRetry(sql: string, params?: any[], maxRetries = 2
       }
 
       // Throw other errors immediately
+      //some changes
       throw error;
     }
   }
