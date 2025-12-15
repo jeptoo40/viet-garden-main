@@ -9,7 +9,7 @@ export default function ReservationHero() {
     <section className="relative h-[600px] bg-gray-900">
       {/* Background image */}
       <Image
-        src="/images/reservation.jpg" // replace with your image
+        src="/images/reservation.jpg" 
         alt="Reservation Hero"
         fill
         className="object-cover w-full h-full brightness-95"

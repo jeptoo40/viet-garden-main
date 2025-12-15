@@ -25,25 +25,11 @@ export default function ContactUsHero() {
        
 
         <p className="text-lg text-gray-200 leading-relaxed">
-          Whether you want to make a reservation, ask about our services, or plan your next event — 
-          we’re here to help you every step of the way.
+          
         </p>
 
         <div className="flex justify-center gap-4 pt-4">
-          <Link
-            href="https://wa.me/254702871104"
-            target="_blank"
-            className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium transition"
-          >
-            WhatsApp Us
-          </Link>
-
-          <Link
-            href="mailto:Reservations@vietgardens.co.ke"
-            className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-medium transition"
-          >
-            Send Email
-          </Link>
+         
         </div>
       </div>
     </section>

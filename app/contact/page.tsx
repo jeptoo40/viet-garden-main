@@ -153,7 +153,32 @@ export default function ContactPage() {
                     We'd love to hear from you! Whether you have questions about our menu, want to make a reservation,
                     or are planning a special event, our team is here to help.
                   </p>
+
+
+                  
                 </div>
+                <div className="flex justify-center gap-4 pt-4">
+  <a
+    href="https://wa.me/254702871104"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium transition"
+  >
+    WhatsApp Us
+  </a>
+
+  <a
+    href="mailto:Reservations@vietgardens.co.ke"
+    className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-medium transition"
+  >
+    Send Email
+  </a>
+</div>
+
+
+
+
+                
 
                 {/* Contact Details */}
                 <div className="space-y-6">
