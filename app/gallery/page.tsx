@@ -49,7 +49,7 @@ const galleryImages = [
   { id: 9, src:"/images/t1.jpeg", alt: "Team Building", category: "events" },
   {
     id: 10,
-    src: " ",
+    src: "/images/w1.jpeg",
     alt: "Wedding Ceremony",
     category: "weddings",
   },
