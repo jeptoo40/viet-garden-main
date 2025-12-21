@@ -1,19 +1,36 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Award, Star, Clock, Users } from "lucide-react"
-import Link from "next/link"
+"use client";
 
-
-
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Award, Star, Clock, Users } from "lucide-react";
+import Link from "next/link";
 
 const achievements = [
   { icon: Award, number: "50+", label: "Awards Won" },
   { icon: Star, number: "4.9", label: "Rating" },
   { icon: Clock, number: "10+", label: "Years Experience" },
   { icon: Users, number: "10K+", label: "Happy Customers" },
-]
+];
 
 export default function WelcomeSection() {
+  const images = [
+    "/images/cock1-removebg-preview.png",
+    "/images/cock2-removebg-preview.png",
+    "/images/cock3-removebg-preview.png",
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  // Auto-cycle every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative py-32 bg-gray-50 overflow-hidden">
       {/* Background Pattern */}
@@ -24,30 +41,37 @@ export default function WelcomeSection() {
 
       <div className="container mx-auto px-6 relative">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Wine bottle image with enhanced styling */}
+          {/* Image Slider */}
           <div className="relative order-2 lg:order-1">
             <div className="relative max-w-lg mx-auto lg:mx-0">
-              {/* Decorative Elements */}
-              <div className="absolute -top-12 -left-12 w-24 h-24 border-2 border-red-200 rounded-full opacity-60"></div>
-              <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-red-200/40 to-pink-200/40 rounded-full blur-xl"></div>
-              <div className="absolute top-1/2 -left-8 w-16 h-16 bg-gradient-to-br from-purple-200/50 to-pink-200/50 rounded-full blur-lg"></div>
-
-              {/* Main Image Container */}
-              <div className="relative bg-white rounded-3xl p-8 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
+              <div className="relative bg-white rounded-3xl p-8 shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 w-[400px]">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-purple-50 rounded-3xl opacity-50"></div>
-                <Image
-  src="/images/cock1-removebg-preview.png"
-  alt="Premium wine bottle with fresh ingredients"
-  width={400}
-  height={600}
-  className="relative z-10 rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-500"
-  quality={95}
-/>
 
+                {/* Auto-sliding Images */}
+                <Image
+                  src={images[current]}
+                  alt={`Cocktail ${current + 1}`}
+                  width={400}
+                  height={600}
+                  className="relative z-10 rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-500"
+                  quality={95}
+                />
 
                 {/* Floating Badge */}
                 <div className="absolute -top-4 -right-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
                   Chef's Special
+                </div>
+
+                {/* Navigation Dots */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  {images.map((_, idx) => (
+                    <span
+                      key={idx}
+                      className={`w-3 h-3 rounded-full ${
+                        idx === current ? "bg-red-500" : "bg-gray-300"
+                      }`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
@@ -78,8 +102,8 @@ export default function WelcomeSection() {
 
             {/* Elegant Subtitle */}
             <p className="text-2xl md:text-3xl text-gray-600 italic leading-relaxed font-light relative">
-              <span className="absolute -left-4 top-0 text-6xl text-red-200 font-serif">"</span>A world of exquisite
-              tastes and unforgettable moments.
+              <span className="absolute -left-4 top-0 text-6xl text-red-200 font-serif">"</span>
+              A world of exquisite tastes and unforgettable moments.
               <span className="absolute -right-2 bottom-0 text-6xl text-red-200 font-serif">"</span>
             </p>
 
@@ -93,21 +117,26 @@ export default function WelcomeSection() {
               </p>
             </div>
 
-           {/* Enhanced CTA Buttons */}
-<div className="flex flex-col sm:flex-row gap-4 pt-8">
-  <Button asChild className="group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-10 py-4 text-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-full">
-    <Link href="/booking">
-      <span className="mr-2">Book Us</span>
-      <div className="w-0 group-hover:w-5 transition-all duration-300 overflow-hidden">→</div>
-    </Link>
-  </Button>
+            {/* Enhanced CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-8">
+              <Button
+                asChild
+                className="group bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-10 py-4 text-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-full"
+              >
+                <Link href="/booking">
+                  <span className="mr-2">Book Us</span>
+                  <div className="w-0 group-hover:w-5 transition-all duration-300 overflow-hidden">→</div>
+                </Link>
+              </Button>
 
-  <Button asChild variant="outline" className="group border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-10 py-4 text-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-xl rounded-full bg-transparent">
-    <Link href="/reservations">
-      MAKE RESERVATION
-    </Link>
-  </Button>
-</div>
+              <Button
+                asChild
+                variant="outline"
+                className="group border-2 border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white px-10 py-4 text-lg font-semibold tracking-wide transition-all duration-300 hover:shadow-xl rounded-full bg-transparent"
+              >
+                <Link href="/reservations">MAKE RESERVATION</Link>
+              </Button>
+            </div>
 
             {/* Achievement Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-gray-200">
@@ -125,5 +154,5 @@ export default function WelcomeSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

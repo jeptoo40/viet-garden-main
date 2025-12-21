@@ -44,7 +44,7 @@ export default function DiningPage() {
       <Header />
       <SimpleHeroSection
         title=""
-        subtitle="Experience the fusion of Vietnamese and Kenyan flavors"
+        subtitle=" "
         backgroundImage="/images/dining2.jpg"
       />
 
