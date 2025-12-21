@@ -10,7 +10,7 @@ const foodImages = [
    
   },
   { src: "/images/food2.jpg", alt: "Grilled Goat Meat",},
-  { src: "/images/food3.jpg", alt: "Vietnamese Pho",  },
+  { src: "/images/food3.jpg", alt: "kenyan Pho",  },
   { src: "/images/food4.jpg", alt: "Nyama Choma", },
   { src:"/images/food5.jpg", alt: "Fish Curry",  },
   { src: "/images/food6.jpg", alt: "Spring Rolls",  },
@@ -63,13 +63,32 @@ export default function FloatingFoodImages() {
         </div>
       ))}
 
-      {/* Center Text */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
-          <h3 className="text-2xl font-bold text-gray-800 mb-2">Delicious Cuisine</h3>
-          <p className="text-gray-600">With African Fusion</p>
-        </div>
-      </div>
+
+<section className="py-12 bg-gray-50 text-center">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+      Download Our Menu
+    </h2>
+    <p className="text-lg text-gray-600 mb-6">
+      Explore our full range of culinary delights.
+    </p>
+
+    <a
+      href="/menu/Viet-Gardens-Menu.pdf" // place your PDF in public/menu folder
+      download
+      className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition"
+    >
+      Download Menu
+    </a>
+  </div>
+</section>
+
+
+
+
+
+
+     
     </div>
   )
 }
