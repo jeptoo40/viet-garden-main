@@ -34,14 +34,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-  <Image
-    src="/images/viet trace.jpg"   // your logo file
-    alt="Viet Gardens Logo"
-    width={80}
-    height={80}
-    priority
-    className="rounded-full object-cover"
-  />
+  
 </Link>
 
 
