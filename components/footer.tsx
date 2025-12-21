@@ -23,7 +23,7 @@ export default function Footer() {
   </div>
 
   <p className="text-gray-300 leading-relaxed">
-    Experience the perfect blend of Vietnamese flavors and Kenyan hospitality in a warm, inviting atmosphere.
+    Experience the perfect blend of Kenyan hospitality in a warm, inviting atmosphere.
   </p>
 
   <div className="flex space-x-4">

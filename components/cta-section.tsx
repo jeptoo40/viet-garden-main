@@ -129,13 +129,7 @@ export default function CTASection() {
             <div className="relative">
               {/* Main Image */}
               <div className="">
-                <Image
-                  src="/images/viet-garden-hero.jpg"
-                  alt="Elegant dining setup"
-                  width={400}
-                  height={500}
-                  className="rounded-2xl shadow-2xl"
-                />
+               
 
                 {/* Floating Cards */}
                 <div className="absolute -top-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl transform rotate-6 hover:rotate-3 transition-transform">
