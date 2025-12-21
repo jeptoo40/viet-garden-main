@@ -19,7 +19,7 @@ export default function ReservationHero() {
       <div className="absolute inset-0 flex flex-col justify-center items-start px-8 lg:px-20">
       
         <p className="text-lg lg:text-2xl text-white mb-8 max-w-xl">
-          Secure your spot for gym sessions, conference rooms, or special events. Fast, easy, and convenient booking!
+         
         </p>
        
       </div>
