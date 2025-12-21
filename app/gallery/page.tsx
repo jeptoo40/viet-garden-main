@@ -47,12 +47,7 @@ const galleryImages = [
     category: "interior",
   },
   { id: 9, src:"/images/t1.jpeg", alt: "Team Building", category: "events" },
-  {
-    id: 10,
-    src: "/images/w1.jpg",
-    alt: "Wedding Ceremony",
-    category: "weddings",
-  },
+  
   {
     id: 11,
     src: "/images/f4.jpg",
