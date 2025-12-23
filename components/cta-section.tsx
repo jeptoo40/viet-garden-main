@@ -1,5 +1,5 @@
 "use client"
-
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Calendar, Phone, MapPin, ArrowRight } from "lucide-react"
 import Image from "next/image"
@@ -116,12 +116,14 @@ export default function CTASection() {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
 
-                <Button
-                  variant="outline"
-                  className="group border-2 border-white text-white hover:bg-white hover:text-gray-900 px-10 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-sm rounded-full bg-transparent"
-                >
-                  VIEW MENU
-                </Button>
+                <Link href="/menu.pdf" download>
+  <Button
+    variant="outline"
+    className="group border-2 border-white text-white hover:bg-white hover:text-gray-900 px-10 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-sm rounded-full bg-transparent"
+  >
+    VIEW MENU
+  </Button>
+</Link>
               </div>
             </div>
 

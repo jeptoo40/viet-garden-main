@@ -64,19 +64,20 @@ export default function FloatingFoodImages() {
       ))}
 
 
-<section className="py-12 bg-gray-50 text-center">
-  <div className="container mx-auto px-4">
+<section className="py-12 bg-gray-50 text-center relative z-[999]">
+  <div className="container mx-auto px-4 relative z-[999]">
     <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
       Download Our Menu
     </h2>
+
     <p className="text-lg text-gray-600 mb-6">
       Explore our full range of culinary delights.
     </p>
 
     <a
-      href="/menu/Viet-Gardens-Menu.pdf" // place your PDF in public/menu folder
+      href="/menu.pdf"
       download
-      className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition"
+      className="relative z-[999] inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
     >
       Download Menu
     </a>
