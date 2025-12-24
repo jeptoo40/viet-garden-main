@@ -75,12 +75,14 @@ export default function FloatingFoodImages() {
     </p>
 
     <a
-      href="/menu.pdf"
-      download
-      className="relative z-[999] inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
-    >
-      Download Menu
-    </a>
+  href="https://drive.google.com/uc?export=download&id=1HMgmfxJ-r9HHzLFhyei12J0W9W0Z8yQ_"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="relative z-[999] inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+>
+  Download Menu
+</a>
+
   </div>
 </section>
 
