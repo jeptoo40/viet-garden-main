@@ -118,6 +118,8 @@ export default function CTASection() {
 
                 <Link
   href="https://drive.google.com/uc?export=download&id=1HMgmfxJ-r9HHzLFhyei12J0W9W0Z8yQ_"
+  target="_blank"
+  rel="noopener noreferrer"
   passHref
 >
   <Button
@@ -127,6 +129,7 @@ export default function CTASection() {
     VIEW MENU
   </Button>
 </Link>
+
 
               </div>
             </div>
